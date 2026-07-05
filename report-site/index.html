@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Archaeology of dioterms — A Sourced Historical Timeline</title>
+<meta name="description" content="Where the disclose.io safe-harbor terms (dioterms) actually came from — the earliest internet-verifiable ancestor, dated to 2014-07-23, with every claim traced to a live archive.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://history.disclose.io/">
+<style>
+  /* ===== disclose.io design system — tokens verbatim from state.disclose.io ===== */
+  :root{
+    --bg:#ffffff; --bg-alt:#faf7ff; --bg-tint:#f3f0ff; --bg-deep:#ede9fe;
+    --ink:#0f172a; --muted:#576270; --shade:#f1f5f9;
+    --accent:#673AB6; --accent-deep:#4c1d95; --line:#e5e7eb;
+    --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+    /* legacy token names repointed to the DS so the body's inline var() styles still resolve */
+    --paper:var(--bg); --paper-2:var(--bg-alt); --rule:var(--line);
+    --accent-2:var(--accent-deep); --gold:#7c4dd1; --link:var(--accent);
+    --high-bg:var(--bg-deep); --high-fg:var(--accent-deep);
+    --med-bg:var(--bg-tint); --med-fg:var(--accent-deep);
+    --chip:var(--shade); --serif:var(--sans);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+  ::selection{background:#ddd6fe;color:#1e1b4b}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:900px;margin:0 auto;padding:0 22px}
+
+  /* fixed brandmark + scroll-progress bar (DS chrome) */
+  .brandmark{position:fixed;top:14px;left:20px;z-index:60;font-weight:800;font-size:16px;
+    letter-spacing:-.01em;color:var(--ink);background:rgba(255,255,255,.82);padding:4px 10px;
+    border-radius:8px;backdrop-filter:saturate(1.2) blur(6px)}
+  .brandmark .dot{color:var(--accent)}
+  #progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--accent);z-index:70}
+
+  /* sticky section nav (DS) */
+  .topnav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .topnav .inner{max-width:900px;margin:0 auto;padding:10px 22px;display:flex;gap:6px 16px;
+    flex-wrap:wrap;align-items:center;justify-content:center}
+  .topnav a{font-size:12px;font-weight:600;color:var(--muted);text-transform:uppercase;
+    letter-spacing:.06em;border:0}
+  .topnav a:hover{color:var(--accent);text-decoration:none}
+
+  /* hero */
+  header.hero{background:linear-gradient(180deg,var(--bg-alt),var(--bg));
+    border-bottom:1px solid var(--line);padding:64px 0 44px;text-align:center}
+  .kicker{font-family:var(--sans);text-transform:uppercase;letter-spacing:.18em;font-size:13px;
+    color:var(--accent);font-weight:600;margin:0 0 14px}
+  h1{font-size:clamp(30px,4.6vw,48px);line-height:1.06;letter-spacing:-.02em;margin:0 0 16px;font-weight:700}
+  h1 em{font-style:italic;color:var(--accent)}
+  .sub{font-size:17px;color:var(--muted);margin:0 auto 22px;max-width:40em;line-height:1.55}
+  .meta{font-family:var(--sans);font-size:13px;color:var(--muted);
+    display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:center}
+  .meta span{white-space:nowrap}
+  .meta b{color:var(--accent-deep)}
+
+  /* sections */
+  main{padding:8px 0 0}
+  section{padding:38px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(23px,3.1vw,32px);margin:0 0 10px;font-weight:700;letter-spacing:-.015em;line-height:1.16}
+  h2 .em{font-size:15px;font-family:var(--sans);color:var(--muted);font-weight:400;
+    display:block;letter-spacing:0;text-transform:none;margin-top:6px}
+  h3{font-family:var(--sans);font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--accent);margin:26px 0 10px;font-weight:700}
+  p{margin:0 0 16px}
+
+  /* headline callout — DS card */
+  .headline{background:var(--bg-alt);border:1px solid var(--line);border-left:5px solid var(--accent);
+    border-radius:16px;padding:22px 24px;margin:6px 0 20px}
+  .bigdate{font-family:var(--mono);font-size:34px;font-weight:800;color:var(--accent-deep);
+    letter-spacing:-.02em;margin:0 0 4px;display:block;font-variant-numeric:tabular-nums}
+
+  /* note boxes */
+  .note{background:var(--bg-tint);border:1px solid var(--line);border-radius:12px;
+    padding:14px 18px;font-size:16px;color:var(--ink);margin:18px 0}
+  .note b{color:var(--accent-deep)}
+  blockquote{margin:14px 0;padding:6px 18px;border-left:3px solid var(--accent);
+    color:#3a3550;font-style:italic}
+  ul.tight{margin:10px 0 16px;padding-left:22px}
+  ul.tight li{margin:7px 0}
+  code{font-family:var(--mono);font-size:.84em;background:var(--shade);
+    padding:1.5px 6px;border-radius:5px;color:var(--accent-deep)}
+
+  /* figure */
+  figure{margin:6px 0 8px}
+  figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:14px;
+    background:#fff;box-shadow:0 2px 16px rgba(76,29,149,.10)}
+  figcaption{font-family:var(--sans);font-size:13px;color:var(--muted);text-align:center;margin-top:10px}
+
+  /* ascii lineage — DS deep-indigo panel */
+  .ascii{overflow-x:auto;background:#1e1b4b;color:#e5e1f5;border-radius:14px;
+    padding:18px;font-family:var(--mono);font-size:12px;line-height:1.45;margin:6px 0;border:1px solid #2e2a63}
+  .ascii pre{margin:0;white-space:pre}
+
+  /* timeline */
+  .era{font-family:var(--sans);font-size:13px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--accent-deep);font-weight:700;margin:26px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+  .tl{list-style:none;margin:0;padding:0}
+  .tl li{position:relative;padding:0 0 18px 132px;margin:0}
+  .tl .d{position:absolute;left:0;top:1px;width:112px;font-family:var(--mono);font-size:13px;
+    font-weight:700;color:var(--accent-deep);text-align:right;font-variant-numeric:tabular-nums}
+  .tl .m{margin:0}
+  .tl .goal{color:var(--muted);font-style:italic;font-size:15px;display:block;margin-top:2px}
+  .star{color:var(--accent)}
+
+  /* confidence badges — DS pills */
+  .badge{display:inline-block;font-family:var(--sans);font-size:11px;font-weight:700;
+    letter-spacing:.05em;padding:2px 9px;border-radius:999px;vertical-align:middle;margin-left:4px;text-transform:uppercase}
+  .b-high{background:var(--accent);color:#fff}
+  .b-med{background:var(--bg-tint);color:var(--accent-deep);border:1px solid #d6ccf0}
+
+  /* tables */
+  table{width:100%;border-collapse:collapse;font-size:15px;margin:8px 0 4px}
+  th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--sans);font-size:12px;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--muted);font-weight:700}
+  td.when{font-family:var(--mono);font-weight:700;color:var(--accent-deep);white-space:nowrap}
+
+  /* references */
+  .refgroup{margin:0 0 22px}
+  .reflist{list-style:none;margin:0;padding:0;font-size:15px}
+  .reflist li{padding:8px 0;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:baseline}
+  .reflist .tag{flex:0 0 auto;font-family:var(--mono);font-size:11px;font-weight:700;
+    color:#fff;background:var(--accent);padding:1px 6px;border-radius:5px}
+  .reflist .tag.wb{background:var(--accent-deep)}
+  .reflist .tag.doc{background:#6d28d9}
+  .reflist .tag.src{background:#64748b}
+  .reflist .txt{flex:1 1 auto}
+  .reflist .txt .lab{display:block;color:var(--ink)}
+  .reflist .txt a{font-size:13px;font-family:var(--mono);word-break:break-all}
+
+  /* footer */
+  footer{padding:34px 0 60px;color:var(--muted);font-family:var(--sans);font-size:14px}
+  footer a{color:var(--accent-deep)}
+  .prov{background:var(--bg-tint);border:1px solid var(--line);border-radius:12px;
+    padding:16px 18px;margin:0 0 18px;font-size:14px;color:var(--ink);line-height:1.6}
+  .prov b{color:var(--accent-deep)}
+  .toc{font-family:var(--sans);font-size:14px;margin:24px 0 0;display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center}
+  .toc a{border:0;color:var(--accent-deep);font-weight:600}
+
+  @media(max-width:560px){
+    body{font-size:15px}
+    .tl li{padding-left:0}
+    .tl .d{position:static;width:auto;text-align:left;display:block;margin-bottom:2px}
+    .brandmark{display:none}
+  }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div class="brandmark">disclose<span class="dot">.</span>io</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">disclose.io · a sourced history of the terms</p>
+    <h1>The Archaeology of <em>dioterms</em></h1>
+    <p class="sub">Where the disclose.io safe-harbor terms actually came from — traced to the earliest internet-verifiable ancestor, with every claim anchored to a live archive.</p>
+    <div class="meta">
+      <span>Assembled <b>2026-05-31</b></span>
+      <span>Links re-checked 2026-07-05</span>
+      <span>Ground truth: git author-dates + Wayback timestamps</span>
+      <span>Confidence-tagged throughout</span>
+    </div>
+    <nav class="toc">
+      <a href="#headline">Headline finding</a>
+      <a href="#lineage">Lineage chain</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#goals">Goal evolution</a>
+      <a href="#predecessors">Predecessor lineage</a>
+      <a href="#caveats">Caveats</a>
+      <a href="#references">References &amp; archives</a>
+    </nav>
+  </div>
+</header>
+
+<nav class="topnav"><div class="inner">
+  <a href="#headline">Headline</a>
+  <a href="#lineage">Lineage</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#goals">Goals</a>
+  <a href="#predecessors">Predecessors</a>
+  <a href="#caveats">Caveats</a>
+  <a href="#references">References</a>
+</div></nav>
+
+<main class="wrap">
+
+  <!-- HEADLINE -->
+  <section id="headline">
+    <h2>Earliest provenance root of the dioterms lineage</h2>
+    <div class="headline">
+      <span class="bigdate">2014-07-23</span>
+      <p style="margin:0;color:var(--muted)">first commit of <code>bugcrowd/disclosure-policy</code> — hash <code>10ea3e1</code>, <i>“first commit,”</i> authored by <b>Chris Raethke</b> (Bugcrowd’s founding CTO) at 23:02:41 −0700.</p>
+    </div>
+
+    <div class="note">
+      <b>Precise framing.</b> A “dioterm” is a <i>disclose.io</i> term, and disclose.io did not exist until 2018. The 2014 artifact is <b>not itself a dioterm</b> — it is the earliest internet-traceable <b>ancestor</b> that the dioterms are directly, repo-documentedly descended from. The claim is about <i>provenance</i>, not about the brand existing in 2014.
+    </div>
+
+    <p>That repo’s own GitHub description draws the inheritance explicitly:</p>
+    <blockquote>“Open Source Vulnerability Disclosure Framework. Maintained by Bugcrowd and Cipherlaw. <b>Merged with github.com/disclose/dioterms.</b>”</blockquote>
+
+    <p>The defining feature of dioterms — <b>bilateral safe harbor</b> — is already present in that very first 2014 file (<code>responsible_disclosure_policy.md</code>):</p>
+    <blockquote>“If you follow these guidelines… we commit to: <b>Not pursue or support any legal action related to your research</b>…”</blockquote>
+
+    <p><b>The dioterms language is therefore ~4 years older than the disclose.io brand it later fed into.</b> Note this proves a <i>Bugcrowd disclosure-policy repo</i> existed in 2014 — it does <b>not</b> prove disclose.io was co-founded in 2014 (a separate, bio-sourced claim). Keep those two facts apart.</p>
+
+    <h3>Why this date is <span class="badge b-high">HIGH</span></h3>
+    <ul class="tight">
+      <li><b>Author date == committer date</b> (<code>2014-07-23 23:02:41 −0700</code>) — no rebase/backdate divergence.</li>
+      <li><b>Root commit</b> — <code>rev-list --parents</code> shows no parent → a genuine initial commit, not a migrated history.</li>
+      <li><b>Clean initial commit</b> — 3 files / 105 insertions (one policy + one guide + README), not a bulk import that would make the date suspect.</li>
+      <li><b>Independent corroboration</b> — the Wayback Machine captured the live repo on <b>2014-10-16</b> (HTTP 200) and 2015-03-17, ~3 months after the commit. Git <b>and</b> Wayback agree.</li>
+    </ul>
+    <p style="font-size:15px;color:var(--muted)">This is a falsifiable claim: it stands until an earlier Bugcrowd template, gist, or snapshot surfaces. The 2026-05-31 refutation hunt found nothing earlier in Bugcrowd’s repos.</p>
+  </section>
+
+  <!-- VISUAL -->
+  <section id="visual">
+    <h2>Provenance at a glance</h2>
+    <figure>
+    <svg viewBox="0 0 900 195" role="img" aria-label="Provenance timeline of the dioterms, 2000 to 2026" style="width:100%;height:auto;font-family:var(--sans)">
+    <line x1="60" y1="120" x2="840" y2="120" stroke="#cbd5e1" stroke-width="2"/>
+    <circle cx="95" cy="120" r="6" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="95" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#576270" font-family="ui-monospace,Menlo,monospace">2000</text>
+    <text x="95" y="148" text-anchor="middle" font-size="11.5" fill="#0f172a">RFPolicy —</text>
+    <text x="95" y="163" text-anchor="middle" font-size="11.5" fill="#576270">first template</text>
+    <circle cx="255" cy="120" r="18" fill="none" stroke="#673AB6" stroke-width="1.5" opacity="0.45"/><circle cx="255" cy="120" r="11" fill="#673AB6" stroke="#673AB6" stroke-width="3"/>
+    <text x="255" y="86" text-anchor="middle" font-size="14" font-weight="800" fill="#4c1d95" font-family="ui-monospace,Menlo,monospace">2014</text>
+    <text x="255" y="148" text-anchor="middle" font-size="11.5" fill="#0f172a">Bugcrowd framework —</text>
+    <text x="255" y="163" text-anchor="middle" font-size="11.5" fill="#576270">safe-harbor clause</text>
+    <circle cx="430" cy="120" r="6" fill="#673AB6" stroke="#673AB6" stroke-width="1"/>
+    <text x="430" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#4c1d95" font-family="ui-monospace,Menlo,monospace">2018</text>
+    <text x="430" y="148" text-anchor="middle" font-size="11.5" fill="#0f172a">disclose.io —</text>
+    <text x="430" y="163" text-anchor="middle" font-size="11.5" fill="#576270">merges 3 predecessors</text>
+    <circle cx="575" cy="120" r="6" fill="#673AB6" stroke="#673AB6" stroke-width="1"/>
+    <text x="575" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#4c1d95" font-family="ui-monospace,Menlo,monospace">2020</text>
+    <text x="575" y="148" text-anchor="middle" font-size="11.5" fill="#0f172a">dioterms repo —</text>
+    <text x="575" y="163" text-anchor="middle" font-size="11.5" fill="#576270">canonical terms</text>
+    <circle cx="700" cy="120" r="6" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="700" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#576270" font-family="ui-monospace,Menlo,monospace">'21–'24</text>
+    <text x="700" y="148" text-anchor="middle" font-size="11.5" fill="#0f172a">safe harbor enters</text>
+    <text x="700" y="163" text-anchor="middle" font-size="11.5" fill="#576270">courts &amp; EU law</text>
+    <circle cx="820" cy="120" r="6" fill="#673AB6" stroke="#673AB6" stroke-width="1"/>
+    <text x="820" y="86" text-anchor="middle" font-size="14" font-weight="700" fill="#4c1d95" font-family="ui-monospace,Menlo,monospace">2026</text>
+    <text x="820" y="148" text-anchor="middle" font-size="11.5" fill="#0f172a">mission: safe,</text>
+    <text x="820" y="163" text-anchor="middle" font-size="11.5" fill="#576270">simple, standardized</text>
+    <text x="255" y="40" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="0.08em" fill="#673AB6">EARLIEST ROOT</text>
+    <line x1="255" y1="48" x2="255" y2="99" stroke="#673AB6" stroke-width="1" opacity="0.4"/>
+  </svg>
+      <figcaption>From pre-2014 disclosure norms to the 2014 Bugcrowd root, the 2018 launch, and the terms in law by 2024.</figcaption>
+    </figure>
+  </section>
+
+  <!-- LINEAGE -->
+  <section id="lineage">
+    <h2>The lineage chain</h2>
+    <p>Solid lines mark <b>documented inheritance</b> — a repo states it merged something, so that something is a direct ancestor. Dashed lines mark <b>conceptual antecedents</b>: the same problem space, with no sourced derivation.</p>
+    <div style="overflow-x:auto"><svg viewBox="0 0 900 300" role="img" aria-label="Genealogy of the safe-harbor clause: conceptual antecedents and the documented three-tributary chain into dioterms" style="width:100%;min-width:640px;height:auto;font-family:var(--sans)">
+    <defs>
+      <marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#673AB6"/></marker>
+      <marker id="ard" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#cbd5e1"/></marker>
+    </defs>
+    <text x="120" y="24" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="0.06em" fill="#576270">CONCEPTUAL ANTECEDENTS</text>
+    <text x="470" y="24" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="0.06em" fill="#673AB6">DOCUMENTED CHAIN</text>
+    <rect x="30" y="45" width="180" height="46" rx="9" fill="#fff" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="120" y="65" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">2000 · RFPolicy v1.1</text>
+    <text x="120" y="82" text-anchor="middle" font-size="11" fill="#576270">disclosure template</text>
+    <rect x="30" y="110" width="180" height="46" rx="9" fill="#fff" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="120" y="130" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">2002 · IETF draft</text>
+    <text x="120" y="147" text-anchor="middle" font-size="11" fill="#576270">responsible disclosure</text>
+    <rect x="30" y="175" width="180" height="46" rx="9" fill="#fff" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="120" y="195" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">2014 · ISO/IEC 29147</text>
+    <text x="120" y="212" text-anchor="middle" font-size="11" fill="#576270">vendor-side standard</text>
+    <rect x="300" y="45" width="195" height="46" rx="9" fill="#f3f0ff" stroke="#673AB6" stroke-width="1.5"/>
+    <text x="397.5" y="65" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">2014 · Bugcrowd + CipherLaw</text>
+    <text x="397.5" y="82" text-anchor="middle" font-size="11" fill="#576270">goodwill safe harbor</text>
+    <rect x="300" y="110" width="195" height="46" rx="9" fill="#f3f0ff" stroke="#673AB6" stroke-width="1.5"/>
+    <text x="397.5" y="130" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">2018 · Dropbox</text>
+    <text x="397.5" y="147" text-anchor="middle" font-size="11" fill="#576270">“authorized” under CFAA</text>
+    <rect x="300" y="175" width="195" height="46" rx="9" fill="#f3f0ff" stroke="#673AB6" stroke-width="1.5"/>
+    <text x="397.5" y="195" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">2018 · Elazari #legalbugbounty</text>
+    <text x="397.5" y="212" text-anchor="middle" font-size="11" fill="#576270">standardized template</text>
+    <rect x="585" y="110" width="150" height="46" rx="9" fill="#f3f0ff" stroke="#673AB6" stroke-width="1.5"/>
+    <text x="660" y="130" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">2018 · disclose.io</text>
+    <text x="660" y="147" text-anchor="middle" font-size="11" fill="#576270">merges the 3</text>
+    <rect x="760" y="110" width="130" height="46" rx="9" fill="#f3f0ff" stroke="#673AB6" stroke-width="1.5"/>
+    <text x="825" y="130" text-anchor="middle" font-size="12.5" font-weight="700" fill="#4c1d95">2020 · dioterms</text>
+    <text x="825" y="147" text-anchor="middle" font-size="11" fill="#576270">canonical terms</text>
+    <line x1="495" y1="68" x2="580" y2="120" stroke="#673AB6" stroke-width="1.5" marker-end="url(#ar)"/>
+    <line x1="495" y1="133" x2="580" y2="133" stroke="#673AB6" stroke-width="1.5" marker-end="url(#ar)"/>
+    <line x1="495" y1="198" x2="580" y2="146" stroke="#673AB6" stroke-width="1.5" marker-end="url(#ar)"/>
+    <line x1="735" y1="133" x2="755" y2="133" stroke="#673AB6" stroke-width="1.5" marker-end="url(#ar)"/>
+    <path d="M210,68 C250,68 255,120 296,128" fill="none" stroke="#cbd5e1" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#ard)"/>
+    <path d="M210,133 C250,133 255,133 296,133" fill="none" stroke="#cbd5e1" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#ard)"/>
+    <path d="M210,198 C250,198 255,140 296,138" fill="none" stroke="#cbd5e1" stroke-width="1.3" stroke-dasharray="4 3" marker-end="url(#ard)"/>
+    <text x="450" y="280" text-anchor="middle" font-size="11" fill="#576270">Solid = documented inheritance · dashed = conceptual antecedent (no sourced derivation)</text>
+  </svg></div>
+    <p>The solid chain is sourced: disclose.io’s <b>own 2018 launch page</b> names the three tributaries it merged (Bugcrowd+CipherLaw’s 2014 framework, Elazari’s #legalbugbounty, Dropbox’s researcher-protection language), and <code>bugcrowd/disclosure-policy</code>’s description states it merged into <code>disclose/dioterms</code>. The 2000–2014 norms (RFPolicy, IETF draft, ISO 29147) are dashed: they shaped the <i>problem space</i> of standardized disclosure, but no document shows Bugcrowd’s framework deriving its text from them — antecedents, not parents.</p>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <h2>Timeline<span class="em">Each entry: date, milestone, confidence, and source.</span></h2>
+
+    <p class="era">Platform pre-history — the crowdsourced-security market (the <i>demand</i> soil)</p>
+    <ul class="tl">
+      <li><span class="d">2012</span><p class="m"><b>Bugcrowd &amp; HackerOne both founded; Bugcrowd launched first.</b> Per HackerOne co-founder/CTO Alex Rice, on record: <i>“Both founded 2012, @Bugcrowd launched first! @Hacker0x01 kickoff 2/2012, 1st commit 4/2012, 1st private 1/2013, 1st public 10/2013.”</i> <span class="badge b-high">HIGH</span><span class="goal">Crowdsourced security <i>as a service</i> put researchers and orgs into at-scale engagement — exactly what made <b>standardized</b> safe-harbor terms necessary by 2014.</span></p></li>
+      <li><span class="d">2013-03-05</span><p class="m"><b>Bugcrowd’s “The List”</b> — earliest Wayback capture of a community-maintained public directory of bug-bounty programs (<i>“Last update: 2nd March 2013”</i>). A functional antecedent of <code>diodb</code> (2018) on the <i>directory</i> axis — conceptual only, no documented derivation. <span class="badge b-med">MED</span></p></li>
+    </ul>
+
+    <p class="era">Pre-history — disclosure norms (the <i>supply</i> soil)</p>
+    <ul class="tl">
+      <li><span class="d">2000-08-19</span><p class="m"><b>RFPolicy v1.1</b> (Rain Forest Puppy) live on wiretrip.net — first formalized vulnerability-disclosure <i>policy template</i>; <b>v2.0</b> (“5 working days”) followed, bracketed by Wayback snapshots. <span class="badge b-high">HIGH</span><span class="goal">Goal: give researchers a repeatable, fair disclosure process.</span></p></li>
+      <li><span class="d">2002-02-15</span><p class="m">IETF draft <i>“Responsible Vulnerability Disclosure Process”</i> (Christey/MITRE + Wysopal/@stake), rev 00. <span class="badge b-high">HIGH</span><span class="goal">Goal: standardize “responsible disclosure” terminology.</span></p></li>
+      <li><span class="d">2010-07-22</span><p class="m"><b>Microsoft (MSRC) reframes “Responsible Disclosure” → “Coordinated Vulnerability Disclosure.”</b> The neutrality pivot between “responsible” (2002) and the ISO-era vocabulary. <span class="badge b-high">HIGH</span><span class="goal">Goal: strip the moral judgment out of the terminology.</span></p></li>
+      <li><span class="d">2013-11</span><p class="m">ISO/IEC 30111 first edition (<i>vulnerability handling processes</i>) — the vendor-internal handling standard, published ~3 months <i>before</i> its better-known sibling ISO/IEC 29147. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2014-02</span><p class="m">ISO/IEC 29147 first edition (vulnerability disclosure). <span class="badge b-med">MED</span><span class="goal">Goal: a formal international standard.</span></p></li>
+    </ul>
+
+    <p class="era">2014 — the earliest provenance root (Bugcrowd precursor, not yet a “dioterm”)</p>
+    <ul class="tl">
+      <li><span class="d">2014-03-31</span><p class="m"><b>Bugcrowd “Standard Disclosure Terms”</b> — platform-wide terms for its programs (in-page changelog: “Initial Release”), carrying researcher-protection <i>intent</i> (“the more closely your behavior follows these rules, the more we’ll be able to protect you”) but <b>no legal safe-harbor clause</b>. An earlier Bugcrowd terms artifact — <i>not</i> the provenance root. <span class="badge b-high">HIGH</span> capture / <span class="badge b-med">MED</span> release-day<span class="goal">Wayback-verified 2014-04-11; the changelog claims a 2014-03-31 initial release.</span></p></li>
+      <li><span class="d">2014-07-15</span><p class="m">Google announces <b>Project Zero</b> — 8 days before the root commit; its <b>90-day</b> disclosure deadline (+14-day grace) is formalized 2015-02-13. The July-2014 disclosure-norms fortnight; conceptual antecedent (dashed). <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2014-07-23</span><p class="m"><b><code>bugcrowd/disclosure-policy</code> first commit</b> (<code>10ea3e1</code>, Chris Raethke). Files: <code>responsible_disclosure_policy.md</code>, <code>setting_up_a_responsible_disclosure_program.md</code>. <span class="badge b-high">HIGH</span><span class="goal">Goal: an open-source, copy-pasteable disclosure framework with built-in legal safe harbor for researchers.</span></p></li>
+      <li><span class="d">2014-07-24</span><p class="m"><b>Launch press</b> (~15h after the commit): PRNewswire <i>“Bugcrowd Releases Open Source Responsible Disclosure Framework”</i> + Threatpost, both pointing at the repo and quoting CipherLaw’s Jim Denaro <i>(“…researchers… are not discouraged from reporting… because of the legal risks”)</i>. The git + Wayback + <b>press</b> triangle, closed. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2014-10-16</span><p class="m">Earliest Wayback capture of the Bugcrowd framework repo (HTTP 200). <span class="badge b-high">HIGH</span></p></li>
+    </ul>
+
+    <p class="era">2017–2018 — the legal-safe-harbor idea crystallizes</p>
+    <ul class="tl">
+      <li><span class="d">2017</span><p class="m">Amit Elazari’s safe-harbor scholarship begins (DEF CON Skytalks / BSidesLV, unrecorded). <span class="badge b-med">MED</span><span class="goal">Goal: make legal safe harbor a standardized norm, not a per-program favor.</span></p></li>
+      <li><span class="d">2017-07</span><p class="m">U.S. <b>DOJ Criminal Division</b> publishes <i>“A Framework for a Vulnerability Disclosure Program for Online Systems,” v1.0</i> — prosecutorial guidance for designing VDPs that reduce researcher legal risk. Elazari’s template README credits it. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2017-08</span><p class="m"><b>CERT/CC</b> publishes <i>The CERT Guide to Coordinated Vulnerability Disclosure</i> (CMU/SEI-2017-SR-022) — the canonical CVD handbook. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2018-01</span><p class="m">Enigma 2018 talk <i>“Hacking the Law: Are Bug Bounties a True Safe Harbor?”</i> <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2018-03-21</span><p class="m"><b>Dropbox — “Protecting Security Researchers”</b>: the first “<b>‘authorized’ conduct under the CFAA</b>” + DMCA-waiver safe-harbor language in this corpus. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2018-03-29</span><p class="m"><code>EdOverflow/legal-bug-bounty</code> templates repo created (README credits Dropbox). <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2018-04-12</span><p class="m">SSRN paper <i>“Private Ordering Shaping Cybersecurity Policy: The Case of Bug Bounties”</i> (SSRN ID <code>3161758</code> — no DOI; cite the ID). <span class="badge b-high">HIGH</span></p></li>
+    </ul>
+
+    <p class="era">2018 — disclose.io is born</p>
+    <ul class="tl">
+      <li><span class="d">2018-05-16</span><p class="m"><code>disclose/diodb</code> first commit (<code>0158e3b</code>) — oldest repo in the disclose org. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2018-08-02</span><p class="m"><b>disclose.io launches</b> (Bugcrowd + Amit Elazari), explicitly merging the three predecessors. <span class="badge b-high">HIGH</span><span class="goal">Goal (2018 launch-day, verbatim): “a collaborative and vendor-agnostic project to standardize best practices around safe harbour for good-faith security research.”</span></p></li>
+      <li><span class="d">2018-08-02</span><p class="m">The <b>launch-day</b> Wayback capture already shows the full <b>terms project</b>: “Read the core terms,” all three tributaries named, and <i>“so our hacker friends don’t go to jail.”</i> (Corrects an earlier “first terms capture = 2018-08-29”.) <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2018-10</span><p class="m">ISO/IEC 29147 <b>second edition</b> published (the 2014 first edition withdrawn/superseded) — two months after disclose.io’s launch; the standards track and the safe-harbor track converge on the same year. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2018-12-07</span><p class="m">diodb’s first real program list: <b>426 organizations</b> (<code>698675f</code>). <span class="badge b-high">HIGH</span><span class="goal">Goal: track who has adopted safe-harbor terms.</span></p></li>
+    </ul>
+
+    <p class="era">2020 — the terms get a canonical home + the adoption engine</p>
+    <ul class="tl">
+      <li><span class="d">2020-06-30</span><p class="m"><code>disclose/dioterms</code> repo first commit (<code>851a906</code>). <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2020-07-15</span><p class="m">First canonical terms text in the disclose org (<code>be213be</code>, <code>generic-core-terms.md</code>) with an explicit <b>“Safe Harbor”</b> section. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2020-08-12</span><p class="m"><code>disclose/diosts</code> (Go security.txt scraper) created — the future adoption engine. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2020-09-02</span><p class="m"><b>CISA BOD 20-01</b> finalized: every U.S. federal civilian agency must publish a VDP. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2020-11-15</span><p class="m">Wayback captures the actual dioterms text + the <b>2020 mission, verbatim</b>: <i>“To drive vulnerability disclosure adoption through safety, simplicity, and standardization.”</i> <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2020-11-16</span><p class="m"><b>Adoption inflection</b>: the <code>diosts</code> bot auto-imports security.txt-discovered programs, jumping diodb <b>981 → 3,524 entries in one commit</b> (<code>aee74f1</code>). The spike is <i>automation riding CISA BOD 20-01</i>, not a conference. <span class="badge b-high">HIGH</span></p></li>
+    </ul>
+
+    <p class="era">2021–2022 — the vision broadens</p>
+    <ul class="tl">
+      <li><span class="d">2021</span><p class="m">Supporting-standards repos spin out: <code>dnssecuritytxt</code> (2021-03), <code>policymaker</code> (2021-07). <span class="badge b-high">HIGH</span><span class="goal">Goal expands toward an ecosystem.</span></p></li>
+      <li><span class="d">2021-04-11</span><p class="m"><b>dioterms licensed CC0-1.0</b> (public domain): LICENSE added in <code>365c5f8</code> — the terms become genuinely reusable public infrastructure. <span class="badge b-high">HIGH</span><span class="goal">Goal: remove every reuse barrier.</span></p></li>
+      <li><span class="d">2022-04-27</span><p class="m">RFC 9116 (security.txt) published; co-author EdOverflow was an early diodb contributor — the two efforts are intertwined. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2022-07-14</span><p class="m">Wayback captures the <b>2022 mission, verbatim</b>: <i>“a cross-industry, vendor-agnostic standardization project for safe harbor best practices… a straightforward maturity model.”</i> <span class="badge b-high">HIGH</span></p></li>
+    </ul>
+
+    <p class="era">2021–2024 — the surrounding legal landscape (context, <i>not</i> dioterms lineage)</p>
+    <p style="font-size:14px;color:var(--muted);margin:-2px 0 12px">These are <b>parallel</b> developments, not descendants of the dioterms — the safe-harbor <i>norm</i> that disclose.io helped popularize turning up in courts and statutes. No textual derivation is claimed; they are here for context.</p>
+    <ul class="tl">
+      <li><span class="d">2021-06-03</span><p class="m"><b>Van Buren v. United States</b> (SCOTUS, No. 19-783) narrows the CFAA’s “exceeds authorized access,” reducing — though expressly <i>not settling</i> — the exposure the safe-harbor clause exists to waive (the Court left the researcher question open). <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2022-05-19</span><p class="m"><b>DOJ</b> revises its CFAA charging policy to “for the first time direct that <b>good-faith security research should not be charged</b>” — the prosecution side adopts the same good-faith norm the private templates had been advancing. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2022-11-16</span><p class="m"><b>HackerOne “Gold Standard Safe Harbor”</b> — “a short, broad, easily-understood safe harbor statement that’s simple for customers to adopt” (early adopters: GitLab, KAYAK, Yahoo). A descendant of the standardization <i>idea</i> — it does not cite disclose.io. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2022-12-27</span><p class="m"><b>EU NIS2</b> (Directive (EU) 2022/2555) published; Article 12 (“Coordinated vulnerability disclosure”) requires every Member State to adopt a national CVD policy — the CISA-BOD-20-01 pattern, at EU scale. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2023-02-15</span><p class="m"><b>Belgium</b> — among the first EU nations with a broad statutory safe harbor for good-faith research (France’s 2016 Digital Republic Act carried a narrower report-to-ANSSI immunity earlier): the CCB framework “allows any natural or legal person, acting <b>without fraudulent or malicious intent</b>, to investigate and report existing vulnerabilities in… systems located in Belgium.” <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2024-12-10</span><p class="m"><b>EU Cyber Resilience Act</b> (Reg. (EU) 2024/2847) enters into force — manufacturers of products with digital elements must have “a policy on coordinated vulnerability disclosure” — the CVD <i>norm</i> now surfacing as a <b>market-access requirement</b>. <span class="badge b-high">HIGH</span></p></li>
+    </ul>
+
+    <p class="era">Mainstream adoption (one pre-org outlier, shown out of strict order)</p>
+    <ul class="tl">
+      <li><span class="d">2016-11-21</span><p class="m">U.S. DoD VDP goes always-on (“Hack the Pentagon” was the earlier spring-2016 pilot). <span class="badge b-high">HIGH</span><span class="goal">The largest adopter that <b>predates disclose.io itself</b> — placed here because it belongs to the adoption story, not the founding chronology. NOT evidence the org existed in 2016.</span></p></li>
+      <li><span class="d">2023→2025</span><p class="m"><b>Target</b> 2023-11-03 (<code>f71528c</code>) · <b>Dell</b> 2024-03-10 (<code>ddf2f8e</code>) · <b>a16z</b> 2024-09-28 (<code>6f5b57d</code>) · <b>SIX Group</b> 2025-07-20 (<code>0e8e445</code>) — each dated by the diodb commit that added it. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">2026</span><p class="m">The rebuilt disclose.io site restates the mission as <i>“make vulnerability disclosure <b>safe, simple, and standardized</b> for everyone”</i> — the 2020 triad, now addressed to “everyone” with five persona on-ramps. <span class="badge b-high">HIGH</span></p></li>
+      <li><span class="d">by 2026-06-03</span><p class="m"><code>directory.disclose.io</code> — the hosted diodb front-end (“Search vulnerability disclosure and bug bounty programs”) — first Wayback-captured. The capture is an <i>upper bound</i>, not a launch date. <span class="badge b-med">MED</span></p></li>
+    </ul>
+  </section>
+
+  <!-- GOALS -->
+  <section id="goals">
+    <h2>Goal evolution<span class="em">The stated mission, quoted and dated.</span></h2>
+    <table>
+      <thead><tr><th>When</th><th>Stated goal / mission (verbatim)</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td class="when">2014</td><td><i>(implicit in the framework)</i> “an open-source disclosure policy with legal safe harbor”</td><td>bugcrowd/disclosure-policy</td></tr>
+        <tr><td class="when">2018<br><small>(pre-pivot)</small></td><td>“Disclose.io is a community-maintained <b>resource</b> for vulnerability disclosure” — the Jan-2018 guidance site, before the terms-project pivot of Aug 2018</td><td>Wayback 2018-01/08</td></tr>
+        <tr><td class="when">2018<br><small>(launch)</small></td><td>“a collaborative and vendor-agnostic project to <b>standardize best practices around safe harbour</b> for good-faith security research”</td><td>Wayback 2018-08-02</td></tr>
+        <tr><td class="when">2020</td><td>“To drive vulnerability disclosure adoption through <b>safety, simplicity, and standardization</b>”</td><td>Wayback 2020-11-15</td></tr>
+        <tr><td class="when">2022</td><td>“a <b>cross-industry, vendor-agnostic standardization project</b> for safe harbor best practices… a maturity model”</td><td>Wayback 2022-07-14</td></tr>
+        <tr><td class="when">2026</td><td>“make vulnerability disclosure <b>safe, simple, and standardized</b> for everyone”</td><td>Wayback 2026-06-04</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:15px;color:var(--muted)">The arc: a <b>legal artifact</b> (2014 safe-harbor template) → a <b>community resource/directory</b> (2018) → a <b>standardization project with a maturity model</b> (2020–22).</p>
+  </section>
+
+  <!-- PREDECESSORS -->
+  <section id="predecessors">
+    <h2>Where the language came from<span class="em">Seven disclosure policies (2000–2022), compared by their actual text.</span></h2>
+
+    <h3>The safe-harbor clause, assembled across three organizations</h3>
+    <p>The safe-harbor clause is the <b>newest</b> part of these policies. Three organizations built it, in order:</p>
+
+    <div class="note" style="border-left:5px solid var(--accent)">
+      <p style="margin:0 0 8px"><b>2014 · Bugcrowd</b> — the goodwill promise, no statutes <span class="badge b-high">HIGH</span></p>
+      <blockquote style="margin:0">“If you follow these guidelines… we commit to: <b>Not pursue or support any legal action related to your research</b>.”</blockquote>
+    </div>
+    <div class="note" style="border-left:5px solid var(--gold)">
+      <p style="margin:0 0 8px"><b>2018 · Dropbox</b> — where the legal magic word <em>“authorized”</em> enters (Mar 21, 2018), eight days <em>before</em> Elazari’s template repo, which credits it <span class="badge b-high">HIGH</span></p>
+      <blockquote style="margin:0">“…we consider actions consistent with the policy as constituting <b>‘authorized’ conduct under the Computer Fraud and Abuse Act (CFAA)</b>” · “a pledge that we <b>won’t bring a Digital Millennium Copyright Act (DMCA) action</b>…” · “…if a third party initiates legal action, Dropbox will make it clear when a researcher was acting in compliance with the policy (and therefore <b>authorized by us</b>).”</blockquote>
+    </div>
+    <div class="note">
+      <p style="margin:0 0 8px"><b>2018 · Elazari <code>#legalbugbounty</code></b> — standardizes it into a reusable, statute-naming template <span class="badge b-high">HIGH</span></p>
+      <blockquote style="margin:0">“…‘authorized’ conduct under the Computer Fraud and Abuse Act, the DMCA and applicable anti-hacking laws such as <b>Cal. Penal Code 502(c)</b>.”</blockquote>
+      <p style="margin:8px 0 0;font-size:14px;color:var(--muted)">Its README credits the basis: <i>“…the DOJ guidelines… and some leading policies like <b>Dropbox</b>.”</i></p>
+    </div>
+    <div class="note" style="border-left:5px solid var(--accent-2)">
+      <p style="margin:0 0 8px"><b>2020 · dioterms</b> — the parameterized synthesis <span class="badge b-high">HIGH</span></p>
+      <blockquote style="margin:0">“<b>Authorized</b> concerning any applicable anti-hacking laws, and we will <b>not initiate or support legal action</b>… Authorized concerning any relevant anti-circumvention laws… <b>Exempt</b> from restrictions in our Terms of Service (TOS) and/or Acceptable Usage Policy (AUP)… <b>Lawful</b>, helpful… and conducted in good faith.”</blockquote>
+    </div>
+    <p class="note" style="background:var(--paper-2)"><b>Similarity is not provenance.</b> This is concordance + chronology across the texts actually fetched — not a commit-level “who-typed-what” diff. The order is corroborated by disclose.io’s own “three tributaries” attribution (Bugcrowd framework + Elazari + Dropbox) and Elazari’s explicit Dropbox credit, but generic legalese and parallel drafting are not excluded.</p>
+
+    <h3>Feature comparison</h3>
+    <div style="overflow-x:auto">
+    <table>
+      <thead><tr><th>Feature</th><th>RFPolicy ’00</th><th>IETF ’02</th><th>ISO ’14</th><th>Bugcrowd ’14</th><th>Dropbox ’18</th><th>Elazari ’18</th><th>dioterms ’20</th></tr></thead>
+      <tbody>
+        <tr><td>Disclosure window</td><td>✅ 5d</td><td>✅ 30d</td><td>❔</td><td>✅ 90d</td><td>⚪</td><td>➖</td><td>✅ param</td></tr>
+        <tr><td>Researcher conduct</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>➖</td><td>✅</td></tr>
+        <tr><td>Vendor commitments</td><td>⚪</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>➖</td><td>✅</td></tr>
+        <tr><td><b>Legal safe harbor</b></td><td>❌ disclaims</td><td>❌</td><td>❌</td><td>⚪ goodwill</td><td>✅✅ CFAA/DMCA</td><td>✅✅ +Cal 502</td><td>✅ structured</td></tr>
+        <tr><td>Bilateral structure</td><td>❌</td><td>⚪</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+        <tr><td>Machine-readable</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅ security.txt</td></tr>
+        <tr><td>Self-label</td><td>Full Disclosure</td><td>Responsible</td><td>Vuln disclosure</td><td>Responsible Disc.</td><td>VDP</td><td>Safe Harbor</td><td>VDP / BBP</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:14px;color:var(--muted)">✅ present · ⚪ partial · ➖ clause-insert (not a whole policy) · ❌ absent · ❔ not retrievable (paywalled). Safe harbor is the <b>last</b> major feature to appear — ~17 years after the disclosure window.</p>
+
+    <h3>The terminology arc</h3>
+    <p><b>Full Disclosure</b> (2000, completeness) → <b>Responsible</b> (2002, process) → <b>Coordinated / CVD</b> (2010–14, neutrality — CERT/CC: <i>“responsible… is a matter of opinion… framed within the values of whoever is using the term”</i>) → <b>Safe Harbor</b> (2017–18, legality). dioterms speaks all four dialects at once.</p>
+
+    <h3>How the needs evolved</h3>
+    <ul class="tight">
+      <li><b>2000 — vendor stonewalling</b> → a <i>deadline</i> (RFPolicy’s “5 days, then I publish”; it deliberately disclaims legal force).</li>
+      <li><b>2002 — multi-party chaos</b> → <i>roles + process</i> (the Reporter / Vendor / Coordinator triad).</li>
+      <li><b>2010–14 — “responsible” weaponized</b> → <i>neutral terminology</i> (CVD) + a vendor-side standard (ISO 29147).</li>
+      <li><b>2014 — every program reinvents the policy</b> → a <i>reusable, bilateral template</i> (Bugcrowd).</li>
+      <li><b>2017–18 — researchers prosecuted under the CFAA / DMCA</b> → a <i>legally-operative safe harbor</i> (Dropbox ships it; Elazari standardizes it).</li>
+      <li><b>2020–22 — adoption at scale, machine discovery, government mandate</b> → <i>parameterized, machine-readable terms</i> (dioterms, security.txt, CISA BOD 20-01).</li>
+    </ul>
+    <p style="font-size:15px;color:var(--muted)">A disclosure policy started as a <i>threat</i> (“fix it or I publish”), became a <i>protocol</i>, then a <i>brand-neutral standard</i>, then a <i>reusable contract</i>, then a <i>legal shield</i>, and finally a <i>machine-readable, government-mandated interface</i>.</p>
+  </section>
+
+  <!-- CAVEATS -->
+  <section id="caveats">
+    <h2>Confidence legend &amp; honest caveats</h2>
+    <p><span class="badge b-high">HIGH</span> = git commit hash, GitHub API field, RFC/directive, or verified Wayback snapshot. &nbsp; <span class="badge b-med">MED</span> = single/secondary source or non-day-precise date.</p>
+    <p><b>Caveats (carried forward, not hidden):</b></p>
+    <ul class="tight">
+      <li>The often-cited “DEF CON 26 Legal Bug Bounty talk” could <b>not</b> be confirmed as a titled DEF CON 26 main-stage talk — likely a conflation with 2017 Skytalks (unrecorded).</li>
+      <li>The SSRN paper has <b>no DOI</b> — cite SSRN ID <code>3161758</code>. Its page bot-blocks <code>curl</code> (403) but renders live in a browser.</li>
+      <li>ISO 29147’s first-edition <i>day</i> isn’t shown on iso.org; the 2014 edition year is confirmed.</li>
+      <li>~2-year gap between “terms provably existed on disclose.io” (2018-08) and “terms text is archived word-for-word” (2020-11) — Wayback never grabbed the original <code>core_terms</code> file, only the repo’s tree listing.</li>
+      <li><b>An earlier Bugcrowd <i>terms</i> artifact exists — but it isn’t the root.</b> Bugcrowd’s “Standard Disclosure Terms” (2014-03) carries researcher-protection <i>intent</i> but <b>no safe-harbor legal clause</b>, and no documented derivation into dioterms. The falsifiable claim is specifically about the earliest <i>safe-harbor</i> template; that still resolves to 2014-07-23.</li>
+      <li><b>Earliest-found is not earliest-that-exists.</b> Git archaeology establishes the earliest commit <i>located</i> in this search — not proof that no earlier artifact could ever surface. The 2014-07-23 headline is a falsifiable conjecture, retestable as GitHub/Wayback indexes grow.</li>
+    </ul>
+  </section>
+
+  <!-- REFERENCES -->
+  <section id="references">
+    <h2>References &amp; archives<span class="em">Every source re-checked 2026-07-05. A few (SSRN, iso.org, the Belgian CCB page) block bots but render in a browser; each is cited with a Wayback copy. Wayback snapshots are immutable.</span></h2>
+
+    <div class="refgroup">
+      <h3>GitHub — commits &amp; repos (ground truth)</h3>
+      <ul class="reflist">
+        <li><span class="tag">GIT</span><span class="txt"><span class="lab">bugcrowd/disclosure-policy — first commit <code>10ea3e1</code> (2014-07-23, Chris Raethke)</span><a href="https://github.com/bugcrowd/disclosure-policy/commit/10ea3e10c26f237cd8eca3453d816bedf251d640">github.com/bugcrowd/disclosure-policy/commit/10ea3e1…</a></span></li>
+        <li><span class="tag">GIT</span><span class="txt"><span class="lab">bugcrowd/disclosure-policy — repo (“Merged with disclose/dioterms”)</span><a href="https://github.com/bugcrowd/disclosure-policy">github.com/bugcrowd/disclosure-policy</a></span></li>
+        <li><span class="tag">GIT</span><span class="txt"><span class="lab">Terminology rename responsible→vulnerability disclosure — commit <code>cc83616</code> (2018-04-04)</span><a href="https://github.com/bugcrowd/disclosure-policy/commit/cc83616">github.com/bugcrowd/disclosure-policy/commit/cc83616</a></span></li>
+        <li><span class="tag">GIT</span><span class="txt"><span class="lab">disclose/diodb — oldest repo in the disclose org (first commit <code>0158e3b</code>, 2018-05-16)</span><a href="https://github.com/disclose/diodb">github.com/disclose/diodb</a></span></li>
+        <li><span class="tag">GIT</span><span class="txt"><span class="lab">disclose/dioterms — terms’ canonical repo (first commit <code>851a906</code>, 2020-06-30)</span><a href="https://github.com/disclose/dioterms">github.com/disclose/dioterms</a></span></li>
+        <li><span class="tag">GIT</span><span class="txt"><span class="lab">disclose/diosts — Go security.txt scraper that drove the 2020 adoption spike</span><a href="https://github.com/disclose/diosts">github.com/disclose/diosts</a></span></li>
+        <li><span class="tag">GIT</span><span class="txt"><span class="lab">EdOverflow/legal-bug-bounty — safe-harbor templates repo (2018-03-29)</span><a href="https://github.com/EdOverflow/legal-bug-bounty">github.com/EdOverflow/legal-bug-bounty</a></span></li>
+      </ul>
+    </div>
+
+    <div class="refgroup">
+      <h3>Web archives — Wayback Machine snapshots</h3>
+      <ul class="reflist">
+        <li><span class="tag wb">WB</span><span class="txt"><span class="lab">bugcrowd/disclosure-policy — repo captures (2014-10-16, 2015-03-17) corroborating the 2014 commit</span><a href="https://web.archive.org/web/2014*/https://github.com/bugcrowd/disclosure-policy">web.archive.org/web/2014*/github.com/bugcrowd/disclosure-policy</a></span></li>
+        <li><span class="tag wb">WB</span><span class="txt"><span class="lab">disclose.io — earliest snapshot (2016-10-02, 301 redirect; brand registered by 2016)</span><a href="http://web.archive.org/web/20161002234519/http://disclose.io/">web.archive.org/web/20161002234519/disclose.io</a></span></li>
+        <li><span class="tag wb">WB</span><span class="txt"><span class="lab">disclose.io — first HTTP 200 snapshot, first live content (2018-01-18)</span><a href="https://web.archive.org/web/20180118045058/https://disclose.io/">web.archive.org/web/20180118045058/disclose.io</a></span></li>
+        <li><span class="tag wb">WB</span><span class="txt"><span class="lab">disclose.io — full terms project on <b>launch day</b> (2018-08-02: “core terms”, three tributaries, “go to jail”)</span><a href="https://web.archive.org/web/20180802132142/https://disclose.io">web.archive.org/web/20180802132142/disclose.io</a></span></li>
+        <li><span class="tag wb">WB</span><span class="txt"><span class="lab">Bugcrowd “Standard Disclosure Terms” — earlier terms artifact, no safe-harbor clause (capture 2014-04-11)</span><a href="http://web.archive.org/web/20140411213116/http://blog.bugcrowd.com:80/standard-disclosure-terms/">web.archive.org/web/20140411213116/blog.bugcrowd.com/standard-disclosure-terms</a></span></li>
+        <li><span class="tag wb">WB</span><span class="txt"><span class="lab">Bugcrowd “The List” — bug-bounty directory antecedent of diodb (capture 2013-03-05)</span><a href="http://web.archive.org/web/20130305011641/http://bugcrowd.com/list-of-bug-bounty-programs">web.archive.org/web/20130305011641/bugcrowd.com/list-of-bug-bounty-programs</a></span></li>
+        <li><span class="tag wb">WB</span><span class="txt"><span class="lab">Microsoft MSRC — “Announcing Coordinated Vulnerability Disclosure” (2010-07-22)</span><a href="https://web.archive.org/web/20100724135757/http://blogs.technet.com/b/msrc/archive/2010/07/22/announcing-coordinated-vulnerability-disclosure.aspx">web.archive.org/web/20100724135757/…/announcing-coordinated-vulnerability-disclosure</a></span></li>
+        <li><span class="tag wb">WB</span><span class="txt"><span class="lab">Belgium CCB — national safe-harbor framework, effective 2023-02-15</span><a href="https://web.archive.org/web/20230215171904/https://ccb.belgium.be/en/vulnerability-reporting-ccb">web.archive.org/web/20230215171904/ccb.belgium.be/en/vulnerability-reporting-ccb</a></span></li>
+        <li><span class="tag wb">WB</span><span class="txt"><span class="lab">disclose.io — 2026 mission, verbatim (2026-06-04)</span><a href="https://web.archive.org/web/20260604052740/https://disclose.io/">web.archive.org/web/20260604052740/disclose.io</a></span></li>
+        <li><span class="tag wb">WB</span><span class="txt"><span class="lab">dioterms text + 2020 mission, verbatim (2020-11-15)</span><a href="https://web.archive.org/web/20201115224220/https://github.com/disclose/dioterms/blob/master/generic-core-terms.md">web.archive.org/web/20201115224220/…/dioterms/generic-core-terms.md</a></span></li>
+        <li><span class="tag wb">WB</span><span class="txt"><span class="lab">disclose.io — 2022 mission, verbatim (2022-07-14)</span><a href="https://web.archive.org/web/20220714165017/https://disclose.io/">web.archive.org/web/20220714165017/disclose.io</a></span></li>
+      </ul>
+    </div>
+
+    <div class="refgroup">
+      <h3>Papers, standards, RFCs &amp; directives</h3>
+      <ul class="reflist">
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">Elazari — Enigma 2018: “Hacking the Law: Are Bug Bounties a True Safe Harbor?”</span><a href="https://www.usenix.org/conference/enigma2018/presentation/elazari">usenix.org/conference/enigma2018/presentation/elazari</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">Elazari — SSRN “Private Ordering Shaping Cybersecurity Policy” (ID 3161758, no DOI) — <i>403 to bots; renders in browser</i></span><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3161758">papers.ssrn.com/sol3/papers.cfm?abstract_id=3161758</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">RFPolicy v1 (Rain Forest Puppy) — earliest formalized disclosure-policy template</span><a href="https://en.wikipedia.org/wiki/RFPolicy">en.wikipedia.org/wiki/RFPolicy</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">IETF “Responsible Disclosure Process” draft (Christey/Wysopal)</span><a href="https://datatracker.ietf.org/doc/html/draft-christey-wysopal-vuln-disclosure-00">datatracker.ietf.org/doc/html/draft-christey-wysopal-vuln-disclosure-00</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">ISO/IEC 29147 — vulnerability disclosure standard (first ed. 2014)</span><a href="https://www.iso.org/standard/45170.html">iso.org/standard/45170.html</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">CISA BOD 20-01 — U.S. federal VDP mandate (2020-09-02)</span><a href="https://www.cisa.gov/news-events/directives/bod-20-01-develop-and-publish-vulnerability-disclosure-policy">cisa.gov/…/bod-20-01-develop-and-publish-vulnerability-disclosure-policy</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">RFC 9116 — security.txt (2022-04-27)</span><a href="https://www.rfc-editor.org/rfc/rfc9116">rfc-editor.org/rfc/rfc9116</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">ISO/IEC 30111 — vulnerability handling processes, 1st ed. 2013-11 (via Wayback; iso.org 403s bots)</span><a href="https://web.archive.org/web/20171220083905/https://www.iso.org/standard/53231.html">web.archive.org/web/20171220083905/iso.org/standard/53231.html</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">ISO/IEC 29147 — 2nd ed. 2018-10 (supersedes 2014) (via Wayback)</span><a href="https://web.archive.org/web/20181215190313/https://www.iso.org/standard/72311.html">web.archive.org/web/20181215190313/iso.org/standard/72311.html</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">U.S. DOJ — “Framework for a Vulnerability Disclosure Program for Online Systems” v1.0 (July 2017)</span><a href="https://www.justice.gov/criminal-ccips/page/file/983996/download">justice.gov/criminal-ccips/page/file/983996/download</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">CERT/CC — The CERT Guide to Coordinated Vulnerability Disclosure (CMU/SEI-2017-SR-022, Aug 2017)</span><a href="https://www.sei.cmu.edu/library/the-cert-guide-to-coordinated-vulnerability-disclosure-2/">sei.cmu.edu/library/the-cert-guide-to-coordinated-vulnerability-disclosure-2</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">Van Buren v. United States, 593 U.S. ___ (2021-06-03) — CFAA narrowed (slip opinion)</span><a href="https://www.supremecourt.gov/opinions/20pdf/19-783_k53l.pdf">supremecourt.gov/opinions/20pdf/19-783_k53l.pdf</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">DOJ — revised CFAA charging policy: “good-faith security research should not be charged” (2022-05-19)</span><a href="https://www.justice.gov/archives/opa/pr/department-justice-announces-new-policy-charging-cases-under-computer-fraud-and-abuse-act">justice.gov/archives/opa/pr/…charging-cases-under-computer-fraud-and-abuse-act</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">EU NIS2 — Directive (EU) 2022/2555, Art. 12 Coordinated vulnerability disclosure (OJ 2022-12-27)</span><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj">eur-lex.europa.eu/eli/dir/2022/2555/oj</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">EU Cyber Resilience Act — Regulation (EU) 2024/2847 (CVD policy required of manufacturers)</span><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">eur-lex.europa.eu/eli/reg/2024/2847/oj</a></span></li>
+      </ul>
+    </div>
+
+    <div class="refgroup">
+      <h3>Predecessor policy texts (fetched verbatim for the lineage)</h3>
+      <ul class="reflist">
+        <li><span class="tag doc">TXT</span><span class="txt"><span class="lab">RFPolicy v2.0 (Rain Forest Puppy) — full “5 working days” policy text</span><a href="https://dl.packetstormsecurity.net/papers/general/rfpolicy-2.0.txt">dl.packetstormsecurity.net/papers/general/rfpolicy-2.0.txt</a></span></li>
+        <li><span class="tag doc">TXT</span><span class="txt"><span class="lab">IETF — “Responsible Vulnerability Disclosure Process” draft, full text (Christey/Wysopal, 2002)</span><a href="https://www.ietf.org/archive/id/draft-christey-wysopal-vuln-disclosure-00.txt">ietf.org/archive/id/draft-christey-wysopal-vuln-disclosure-00.txt</a></span></li>
+        <li><span class="tag src">SRC</span><span class="txt"><span class="lab">Dropbox — “Protecting security researchers” (March 21, 2018) — the earliest “authorized under the CFAA” safe-harbor language in this corpus</span><a href="https://dropbox.tech/security/protecting-security-researchers">dropbox.tech/security/protecting-security-researchers</a></span></li>
+        <li><span class="tag doc">TXT</span><span class="txt"><span class="lab">Elazari <code>#legalbugbounty</code> — <code>safe_harbor.md</code> template (the standardized clause)</span><a href="https://github.com/EdOverflow/legal-bug-bounty/blob/master/templates/safe_harbor.md">github.com/EdOverflow/legal-bug-bounty/…/safe_harbor.md</a></span></li>
+        <li><span class="tag doc">TXT</span><span class="txt"><span class="lab">disclose.io dioterms — modern <code>core-terms-vdp.md</code> / <code>core-terms-bbp.md</code> (the parameterized synthesis)</span><a href="https://github.com/disclose/dioterms">github.com/disclose/dioterms</a></span></li>
+        <li><span class="tag doc">DOC</span><span class="txt"><span class="lab">CERT/CC — Guide to CVD (the “responsible → coordinated” terminology rationale)</span><a href="https://certcc.github.io/CERT-Guide-to-CVD/tutorials/terms/cvd/">certcc.github.io/CERT-Guide-to-CVD/tutorials/terms/cvd</a></span></li>
+      </ul>
+    </div>
+
+    <div class="refgroup">
+      <h3>Primary social &amp; press</h3>
+      <ul class="reflist">
+        <li><span class="tag src">SRC</span><span class="txt"><span class="lab">Alex Rice (HackerOne co-founder/CTO) — the <b>Bugcrowd-launched-first</b> tweet: “Both founded 2012, @Bugcrowd launched first…” <i>(live in browser; X blocks bot fetches)</i></span><a href="https://x.com/senorarroz/status/779402727885410304">x.com/senorarroz/status/779402727885410304</a> · <a href="https://web.archive.org/web/20201021031353/https://twitter.com/senorarroz/status/779402727885410304">archived copy</a></span></li>
+        <li><span class="tag src">SRC</span><span class="txt"><span class="lab">Bugcrowd — 2014 framework launch press: PRNewswire (2014-07-24)</span><a href="https://www.prnewswire.com/news-releases/bugcrowd-releases-open-source-responsible-disclosure-framework-268435072.html">prnewswire.com/…/bugcrowd-releases-open-source-responsible-disclosure-framework</a></span></li>
+        <li><span class="tag src">SRC</span><span class="txt"><span class="lab">Threatpost — “Bugcrowd Releases Open Source… Disclosure Framework” (2014-07-24, Dennis Fisher)</span><a href="https://threatpost.com/bugcrowd-releases-open-source-vulnerability-disclosure-framework/107399/">threatpost.com/bugcrowd-releases-open-source-vulnerability-disclosure-framework/107399</a></span></li>
+        <li><span class="tag src">SRC</span><span class="txt"><span class="lab">Bugcrowd — “Launches Disclose.io” 2018 launch press release (live) + GlobeNewswire wire (dateline Aug. 02, 2018)</span><a href="https://www.bugcrowd.com/press-release/bugcrowd-launches-disclose-io-open-source-vulnerability-disclosure-framework-to-provide-a-safe-harbor-for-white-hat-hackers/">bugcrowd.com/press-release/…launches-disclose-io…</a> · <a href="https://www.globenewswire.com/news-release/2018/08/02/1546358/0/en/Bugcrowd-Launches-Disclose-io-Open-Source-Vulnerability-Disclosure-Framework-to-Provide-a-Safe-Harbor-for-White-Hat-Hackers.html">GlobeNewswire</a></span></li>
+        <li><span class="tag src">SRC</span><span class="txt"><span class="lab">Google Project Zero — announcement (2014-07-15) + 90-day policy formalized (2015-02-13)</span><a href="https://projectzero.google/2014/07/announcing-project-zero.html">projectzero.google/2014/07/announcing-project-zero</a> · <a href="https://projectzero.google/2015/02/feedback-and-data-driven-updates-to.html">90-day update</a></span></li>
+        <li><span class="tag src">SRC</span><span class="txt"><span class="lab">HackerOne — “Gold Standard Safe Harbor” press release (2022-11-16)</span><a href="https://www.hackerone.com/press-release/hackerone-announces-gold-standard-safe-harbor-improve-protections-good-faith-security">hackerone.com/press-release/hackerone-announces-gold-standard-safe-harbor…</a></span></li>
+        <li><span class="tag src">SRC</span><span class="txt"><span class="lab">U.S. DoD VDP / Hack the Pentagon (2016-11-21)</span><a href="https://hackerone.com/deptofdefense">hackerone.com/deptofdefense</a></span></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <div class="prov">
+    <b>Provenance.</b> Ground-truth hierarchy: git commit author-dates + Wayback snapshot timestamps &gt; publish dates &gt; recollection. Load-bearing links re-checked 2026-07-05 (all HTTP 200 unless noted): the 2018 launch is corroborated by two live dated press releases (Bugcrowd + GlobeNewswire); SSRN, iso.org and the Belgian CCB page 403 to bots but render in-browser; the Alex Rice (Bugcrowd-launched-first) tweet links directly to X (bot-blocked to curl) with a 2020-10-21 Wayback copy. All Wayback snapshots are immutable. The headline “2014-07-23” is a <b>falsifiable conjecture</b> — it stands until an earlier Bugcrowd template, gist, or snapshot surfaces.
+  </div>
+  <p>Source project: <code>history.disclose.io</code> · full sources ledger retained alongside the timeline. Published 2026-07-05.</p>
+</footer>
+
+<script>
+(function(){var p=document.getElementById('progress');function u(){var h=document.documentElement;var st=h.scrollTop||document.body.scrollTop;var sh=(h.scrollHeight||document.body.scrollHeight)-h.clientHeight;p.style.width=(sh>0?(st/sh*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});window.addEventListener('resize',u);u();})();
+</script>
+</body>
+</html>
