@@ -1,0 +1,121 @@
+{
+  "sha": "10ea3e10c26f237cd8eca3453d816bedf251d640",
+  "node_id": "MDY6Q29tbWl0MjIyMDEwMTk6MTBlYTNlMTBjMjZmMjM3Y2Q4ZWNhMzQ1M2Q4MTZiZWRmMjUxZDY0MA==",
+  "commit": {
+    "author": {
+      "name": "Chris Raethke",
+      "email": "chris@codesoda.com",
+      "date": "2014-07-24T06:02:41Z"
+    },
+    "committer": {
+      "name": "Chris Raethke",
+      "email": "chris@codesoda.com",
+      "date": "2014-07-24T06:02:41Z"
+    },
+    "message": "first commit",
+    "tree": {
+      "sha": "055be993f888b5a43fe9e91176b8b2b5e963ef0c",
+      "url": "https://api.github.com/repos/bugcrowd/disclosure-policy/git/trees/055be993f888b5a43fe9e91176b8b2b5e963ef0c"
+    },
+    "url": "https://api.github.com/repos/bugcrowd/disclosure-policy/git/commits/10ea3e10c26f237cd8eca3453d816bedf251d640",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/bugcrowd/disclosure-policy/commits/10ea3e10c26f237cd8eca3453d816bedf251d640",
+  "html_url": "https://github.com/bugcrowd/disclosure-policy/commit/10ea3e10c26f237cd8eca3453d816bedf251d640",
+  "comments_url": "https://api.github.com/repos/bugcrowd/disclosure-policy/commits/10ea3e10c26f237cd8eca3453d816bedf251d640/comments",
+  "author": {
+    "login": "codesoda",
+    "id": 375125,
+    "node_id": "MDQ6VXNlcjM3NTEyNQ==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/375125?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/codesoda",
+    "html_url": "https://github.com/codesoda",
+    "followers_url": "https://api.github.com/users/codesoda/followers",
+    "following_url": "https://api.github.com/users/codesoda/following{/other_user}",
+    "gists_url": "https://api.github.com/users/codesoda/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/codesoda/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/codesoda/subscriptions",
+    "organizations_url": "https://api.github.com/users/codesoda/orgs",
+    "repos_url": "https://api.github.com/users/codesoda/repos",
+    "events_url": "https://api.github.com/users/codesoda/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/codesoda/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "codesoda",
+    "id": 375125,
+    "node_id": "MDQ6VXNlcjM3NTEyNQ==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/375125?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/codesoda",
+    "html_url": "https://github.com/codesoda",
+    "followers_url": "https://api.github.com/users/codesoda/followers",
+    "following_url": "https://api.github.com/users/codesoda/following{/other_user}",
+    "gists_url": "https://api.github.com/users/codesoda/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/codesoda/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/codesoda/subscriptions",
+    "organizations_url": "https://api.github.com/users/codesoda/orgs",
+    "repos_url": "https://api.github.com/users/codesoda/repos",
+    "events_url": "https://api.github.com/users/codesoda/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/codesoda/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+
+  ],
+  "stats": {
+    "total": 105,
+    "additions": 105,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "24c08732403f87ee1f238de1b20f6c8ec25f3285",
+      "filename": "README.md",
+      "status": "added",
+      "additions": 13,
+      "deletions": 0,
+      "changes": 13,
+      "blob_url": "https://github.com/bugcrowd/disclosure-policy/blob/10ea3e10c26f237cd8eca3453d816bedf251d640/README.md",
+      "raw_url": "https://github.com/bugcrowd/disclosure-policy/raw/10ea3e10c26f237cd8eca3453d816bedf251d640/README.md",
+      "contents_url": "https://api.github.com/repos/bugcrowd/disclosure-policy/contents/README.md?ref=10ea3e10c26f237cd8eca3453d816bedf251d640",
+      "patch": "@@ -0,0 +1,13 @@\n+## Welcome to the Open Source Responsible Disclosure Framework\n+\n+This Framework is maintained by [Bugcrowd](https://bugcrowd.com) and [CipherLaw](https://www.cipherlawgroup.com/). It is designed to quickly and smoothly prepare your organization to work with the independent security researcher community while reducing the legal risks to researchers and companies. The policy itself has been written with both simplicity and legal completeness in mind.\n+\n+- [Setting up a Responsible Disclosure Program](https://github.com/bugcrowd/disclosure-policy/blob/master/setting_up_a_responsible_disclosure_program.md) - A step by step best practices guide on how to setup your program.\n+- [Responsible Disclosure Policy](https://github.com/bugcrowd/disclosure-policy/blob/master/responsible_disclosure_policy.md) - A boilerplate disclosure policy. \n+\n+=============================\n+\n+Bugcrowd let's companies run responsible disclosure programs using our Crowdcontrol platform for free. Crowdcontrol securely manages the vulnerability submission process, all communications with the researcher, and provides an automated Hall of Fame for you to credit those who've helped you. Learn more at [https://bugcrowd.com/products/responsible-disclosure](https://bugcrowd.com/products/responsible-disclosure)\n+\n+## License\n+<a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\"><img alt=\"Creative Commons License\" style=\"border-width:0\" src=\"https://i.creativecommons.org/l/by/4.0/88x31.png\" /></a><br /><span xmlns:dct=\"http://purl.org/dc/terms/\" property=\"dct:title\">Open Source Responsible Disclosure Framework</span> by <a xmlns:cc=\"http://creativecommons.org/ns#\" href=\"https://bugcrowd.com\" property=\"cc:attributionName\" rel=\"cc:attributionURL\">Bugcrcowd</a> is licensed under a <a rel=\"license\" href=\"http://creativecommons.org/licenses/by/4.0/\">Creative Commons Attribution 4.0 International License</a>."
+    },
+    {
+      "sha": "8b11327c4257ff81b21762ec070ef61b5cd41451",
+      "filename": "responsible_disclosure_policy.md",
+      "status": "added",
+      "additions": 49,
+      "deletions": 0,
+      "changes": 49,
+      "blob_url": "https://github.com/bugcrowd/disclosure-policy/blob/10ea3e10c26f237cd8eca3453d816bedf251d640/responsible_disclosure_policy.md",
+      "raw_url": "https://github.com/bugcrowd/disclosure-policy/raw/10ea3e10c26f237cd8eca3453d816bedf251d640/responsible_disclosure_policy.md",
+      "contents_url": "https://api.github.com/repos/bugcrowd/disclosure-policy/contents/responsible_disclosure_policy.md?ref=10ea3e10c26f237cd8eca3453d816bedf251d640",
+      "patch": "@@ -0,0 +1,49 @@\n+# Responsible Disclosure Policy (Example)\n+\n+[COMPANY] Responsible Disclosure Policy \n+\n+We take the security of our systems seriously, and we value the security community. The responsible disclosure of security vulnerabilities helps us ensure the security and privacy of our users.\n+\n+**Guidelines**  \n+\n+We require that all researchers:\n+* Make every effort to avoid privacy violations, degradation of user experience, disruption to production systems, and destruction of data during security testing;\n+* Perform research only within the scope set out below; \n+* Use the identified communication channels to report vulnerability information to us; and\n+* Keep information about any vulnerabilities you’ve discovered confidential between yourself and [COMPANY] until we’ve had [90] days to resolve the issue.\n+\n+\n+If you follow these guidelines when reporting an issue to us, we commit to:\n+* Not pursue or support any legal action related to your research;\n+* Work with you to understand and resolve the issue quickly (including an initial confirmation of your report within 72 hours of submission); \n+* Recognize your contribution on our Security Researcher Hall of Fame, if you are the first to report the issue and we make a code or configuration change based on the issue.\n+\n+\n+**Scope**  \n+* [Website URI]\n+* [Product Information]\n+\n+**Out of scope**  \n+Any services hosted by 3rd party providers and services are excluded from scope. These services include:\n+* [Other 3rd Party Services]\n+\n+In the interest of the safety of our users, staff, the Internet at large and you as a security researcher, the following test types are excluded from scope: \n+* Findings from physical testing such as office access (e.g. open doors, tailgating)\n+* Findings derived primarily from social engineering (e.g. phishing, vishing)\n+* Findings from applications or systems not listed in the ‘Scope’ section\n+* Functional, UI and UX bugs and spelling mistakes\n+* Network level Denial of Service (DoS/DDoS) vulnerabilities\n+\n+Things we do not want to receive: \n+* Personally identifiable information (PII) \n+* Credit card holder data \n+\n+\n+**How to report a security vulnerability?**  \n+If you believe you’ve found a security vulnerability in one of our products or platforms please send it to us by emailing security@[COMPANY]. Please include the following details with your report:\n+\n+* Description of the location and potential impact of the vulnerability;\n+* A detailed description of the steps required to reproduce the vulnerability (POC scripts, screenshots, and compressed screen captures are all helpful to us); and\n+* Your name/handle and a link for recognition in our Hall of Fame.\n+\n+If you’d like to encrypt the information, please use our [PGP key]."
+    },
+    {
+      "sha": "fed37639be5260837029433cd21308db766c124a",
+      "filename": "setting_up_a_responsible_disclosure_program.md",
+      "status": "added",
+      "additions": 43,
+      "deletions": 0,
+      "changes": 43,
+      "blob_url": "https://github.com/bugcrowd/disclosure-policy/blob/10ea3e10c26f237cd8eca3453d816bedf251d640/setting_up_a_responsible_disclosure_program.md",
+      "raw_url": "https://github.com/bugcrowd/disclosure-policy/raw/10ea3e10c26f237cd8eca3453d816bedf251d640/setting_up_a_responsible_disclosure_program.md",
+      "contents_url": "https://api.github.com/repos/bugcrowd/disclosure-policy/contents/setting_up_a_responsible_disclosure_program.md?ref=10ea3e10c26f237cd8eca3453d816bedf251d640",
+      "patch": "@@ -0,0 +1,43 @@\n+## Guide to setting up a Responsible Disclosure Program\n+\n+**Background** - Responsible disclosure is the process of inviting security researchers to find and report security issues in your systems. A successful responsible disclosure program relies on clear, easy to understand, and legally complete  guidelines, backed by an internal process that is equally simple and clear. This document is designed as a best practice guide for preparing and running a successful responsible disclosure program.\n+##### 1. Prepare your organization\n+1. It’s important that senior leadership is aware of the disclosure policy. A high priority security issue handled improperly could damage the reputation of the organization. \n+2. The development, IT and communications team are all critical components to a successful program. Make sure they are all aware of your efforts. It’s important to state the benefits clearly to all departments so everyone understands that the program is a measure to help increase the security of the company. \n+3. It’s helpful to make the teams mindful of the fact that the researchers are helping them for free, and that the respect they treat them with ought to reflect this.\n+4. Discuss and formalize your response procedure.\n+\t* Who will be responsible for ensuring a submission is answered?\n+\t* How quickly will you be able to respond?\n+\t* What happens when you get a high priority security issue?\n+\n+##### 2. Create a public disclosure policy\n+1. Discuss with your security team what constitutes a security issue, and what areas of your business are off limits to public research. This policy guides interactions between your organization and researchers. \n+2. The public page and policy also serves as a way to proactively communicate with researchers who submit feedback through other channels (support@[COMPANY], etc). \n+3. Make sure to provide a way to contact you (typically security@[COMPANY] or a form for researchers to submit information)\n+4. In the policy, give the researchers areas of focus for their testing. Typically this takes the form of a “scope”, such as “.yourcompany.com”. If you find that you’re receiving issues that are out of scope, you can point researchers to this guidance. If your scope guidance is not explicit, researchers will assume they can test everything (*.yourcompany.com). \n+5. Make sure to exclude sites and domains that you do not directly control.\n+\n+\n+##### 3. Publish your policy\n+Your policy should be made publicly available on a security-focused page on your public website. This page will become a resource for all visitors interested in how you protect their data.  We recommend https://www.[COMPANY].com/security. \n+\n+##### 4. Be responsive and communicate clearly\n+1. Acknowledge initial receipt of any report, and set expectations for a response.\n+2. Keep the researcher informed during each stage of the validation process. If the bug is not in scope, or otherwise not valid, email the researcher to bring closure to their case. Has the vulnerability been researched and validated? Let them know. Is your team unsure of how to validate the submission? Ask your researcher for clarity on how to duplicate the bug. Researchers want to know when a fix is deployed and remediated, so keep them updated on each stage of the process.\n+3. Be aware that researchers have expectations about your response time based on previous interaction with organizations. Some researchers will be understanding of a delayed response, some will not. \n+\n+##### 5. Be transparent\n+1. Explain your decisions. Remember that the researcher doesn't understand your business from the same perspective that you do. Be clear about why the issue is or isn't important to you.\n+2. Conduct your responses as though they're in public view. Researchers will occasionally publish a transcript of your conversations, along with the report of the vulnerability.\n+3. Keep records. A log of the entire communication history from your side can be helpful if you need to defend your actions.\n+\n+##### 6. Don’t Panic\n+1. Don't panic! Receiving your first vulnerability report from the outside world can be a scary and confronting experience, but keep in mind that the researcher is proactively trying to help you.\n+2. Should the researcher publish the details of the report publicly ahead of time, contact them and ask them to take it down, and remind them of your policy.\n+\n+##### 7. Acknowledge and credit\n+1. If it warrants a code or configuration change, reward the researchers with praise, a place on your hall of fame, or a bounty reward. \n+2. A Hall of Fame is a page that lists researchers who have contributed valid, unique vulnerabilities to your team, and is a form of recognition that costs your team nothing. Researchers take pride in being listed, so make sure to add contributors when appropriate and properly manage your hall of fame.\n+\n+##### 8. Fix fast\n+1. Make sure you resolve the vulnerability quickly. For most researchers, this is the most important part - Seeing the positive impact of their work."
+    }
+  ]
+}

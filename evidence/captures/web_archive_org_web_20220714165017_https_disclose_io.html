@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script type="text/javascript" src="https://web-static.archive.org/_static/js/bundle-playback.js?v=2N_sDSC0" charset="utf-8"></script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/wombat.js?v=o9P2E1FK" charset="utf-8"></script>
+<script>window.RufflePlayer=window.RufflePlayer||{};window.RufflePlayer.config={"autoplay":"on","unmuteOverlay":"hidden","showSwfDownload":true};</script>
+<script type="text/javascript" src="https://web-static.archive.org/_static/js/ruffle/ruffle.js"></script>
+<script type="text/javascript">
+    __wm.init("https://web.archive.org/web");
+  __wm.wombat("https://disclose.io/","20220714165030","https://web.archive.org/","web","https://web-static.archive.org/_static/",
+	      "1657817430");
+</script>
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/banner-styles.css?v=1utQkbB3" />
+<link rel="stylesheet" type="text/css" href="https://web-static.archive.org/_static/css/iconochive.css?v=3PDvdIFv" />
+<!-- End Wayback Rewrite JS Include -->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>The disclose.io Project | Open-source tools for a healthy Internet Immune System.</title>
+<meta name="generator" content="Jekyll v3.9.0"/>
+<meta property="og:title" content="The disclose.io Project"/>
+<meta name="author" content="disclose.io"/>
+<meta property="og:locale" content="en"/>
+<meta name="description" content="Open-source tools for a healthy Internet Immune System."/>
+<meta property="og:description" content="Open-source tools for a healthy Internet Immune System."/>
+<link rel="canonical" href="https://web.archive.org/web/20220714165030/https://disclose.io/"/>
+<meta property="og:url" content="https://web.archive.org/web/20220714165030/https://disclose.io/"/>
+<meta property="og:site_name" content="The disclose.io Project"/>
+<meta name="twitter:card" content="summary"/>
+<meta property="twitter:title" content="The disclose.io Project"/>
+<script type="application/ld+json">
+{"description":"Open-source tools for a healthy Internet Immune System.","url":"https://web.archive.org/web/20220714165030/https://disclose.io/","@type":"WebSite","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://web.archive.org/web/20220714165030/https://disclose.io/logo.svg"},"name":"disclose.io"},"headline":"The disclose.io Project","name":"The disclose.io Project","author":{"@type":"Person","name":"disclose.io"},"@context":"https://web.archive.org/web/20220714165030/https://schema.org"}</script>
+
+<meta property="og:image" content="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/logo.svg"/>
+<link rel="stylesheet" href="/web/20220714165030cs_/https://disclose.io/assets/css/main.css">
+<link rel="shortcut icon" type="image/png" href="/web/20220714165030im_/https://disclose.io/uploads/favicon.png">
+<link rel="alternate" type="application/rss+xml" title="The disclose.io Project" href="/web/20220714165030/https://disclose.io/feed.xml">
+<script src="/web/20220714165030js_/https://disclose.io/assets/js/main.js"></script>
+<script>
+function searchResults(form) {
+
+    var currentItem = null;
+    var search = document.getElementById(form);
+    var results = document.getElementById(form + "-results");
+    var toggle = document.getElementById(form + "-toggle");
+
+    function removeActive() {
+        for (i = 0; i < results.children.length; i++) {
+            results.children[i].classList.remove("uk-background-muted");
+        }
+    }
+
+    // Detect all clicks on the document
+    document.addEventListener("click", function(event) {
+
+        var isClickSearch = false;
+        var isClickResults = false;
+        var isClickSearchToggle = false;
+
+        if (search !== null) {
+            isClickSearch = search.contains(event.target);
+        }
+
+        if (results !== null) {
+            isClickResults = results.contains(event.target);
+        }
+
+        if (toggle !== null) {
+            isClickSearchToggle = toggle.contains(event.target);
+        }
+
+        if (isClickSearch || isClickSearchToggle) {
+            results.style.display = "block";
+        }        
+
+        if (!isClickResults && !isClickSearch && !isClickSearchToggle) {
+            results.style.display = "none";
+        }        
+        
+    });    
+
+    results.addEventListener("mouseover", function(event) {
+
+        removeActive();
+        event.target.parentElement.classList.add("uk-background-muted");
+        currentItem = null;
+
+    });
+
+    results.addEventListener("mouseout", function(event) {
+        event.target.parentElement.classList.remove("uk-background-muted");
+    });
+
+
+    search.addEventListener("keyup", function(event) {
+
+        var resultItems = results.children;
+        var resultCount = results.children.length;
+                                
+        if (event.keyCode === 40) {
+
+            if (currentItem < (resultCount - 1)) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem++;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+            
+        } else if (event.keyCode === 38) {
+
+            if (currentItem > 0) {
+                if (currentItem === null) {
+                    currentItem = 0;
+                } else {
+                    removeActive();
+                    currentItem--;
+                }
+                removeActive();
+                resultItems[currentItem].classList.add("uk-background-muted");
+            }
+
+        } else if (event.keyCode === 13) {
+
+            resultItems[currentItem].children[0].click();
+
+        }
+
+    });
+
+}
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://web.archive.org/web/20220714165030/https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-143424917-6', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+<header class="uk-background-center-center uk-background-cover" style="">
+<div class="uk-overlay-header" style="">
+<div data-uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent; top: 200">
+<nav class="uk-navbar-container">
+<div class="uk-container">
+<div data-uk-navbar>
+<div class="uk-navbar-left">
+<a class="uk-navbar-item uk-logo uk-visible@m" href="/web/20220714165030/https://disclose.io/"><img src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/logo.svg" alt="The disclose.io Project"></a>
+<a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas-docs" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Docs</span></a>
+<ul class="uk-navbar-nav uk-visible@m">
+<li class="uk-active"><a href="/web/20220714165030/https://disclose.io/">Home</a></li>
+<li><a href="/web/20220714165030/https://disclose.io/docs/what-is-disclose/">Docs</a></li>
+<li><a href="https://web.archive.org/web/20220714165030/https://blog.disclose.io/" target="_blank">Blog</a></li>
+<li><a href="/web/20220714165030/https://disclose.io/history/">History</a></li>
+<li><a href="/web/20220714165030/https://disclose.io/programs/">Program Search</a></li>
+</ul>
+ </div>
+<div class="uk-navbar-center uk-hidden@m">
+<a class="uk-navbar-item uk-logo" href="/web/20220714165030/https://disclose.io/"><img src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/logo.svg" alt="The disclose.io Project"></a>
+</div>
+<div class="uk-navbar-right">
+<ul class="uk-navbar-nav uk-visible@m">
+<li><div class="uk-navbar-item"><a class="uk-button uk-button-primary-outline" href="https://web.archive.org/web/20220714165030/https://github.com/disclose" target="_blank">Our Github</a></div></li>
+<li><div class="uk-navbar-item"><a class="uk-button uk-button-primary-outline" href="https://web.archive.org/web/20220714165030/https://community.disclose.io/" target="_blank">Join The Community</a></div></li>
+<li><div class="uk-navbar-item"><a class="uk-button uk-button-primary" href="/web/20220714165030/https://disclose.io/contact/">Contact Us</a></div></li>
+</ul>
+<a class="uk-navbar-toggle uk-hidden@m" href="#offcanvas" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span></a>
+</div>
+</div>
+</div>
+</nav>
+</div>
+<div class="uk-section section-hero uk-position-relative" data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; repeat: true">
+<div class="uk-container uk-container-small">
+<p class="hero-image uk-text-center"><img src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/tug-of-war.jpg" alt="Hero"></p>
+<h1 class="uk-heading-primary uk-text-center uk-margin-remove-top">disclose.io</h1>
+<p class="uk-text-lead uk-text-center">We're here to make vulnerability disclosure safe, simple, and standardized for everyone.</p>
+</div>
+</div>
+</div>
+</header>
+<div class="uk-section">
+<div class="uk-container">
+<h2 class="uk-h1 uk-text-center">Let's get started...</h2>
+<div class="uk-child-width-1-5@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid="">
+<div>
+<div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+<a class="uk-position-cover" href="/web/20220714165030/https://disclose.io/docs/what-is-disclose/"></a>
+<span data-uk-icon="icon: cog; ratio: 3.4" class=""></span>
+<h3 class="uk-card-title uk-margin">Getting Started</h3>
+<p>Learn about The disclose.io Project, how it works, and how to get started for vendors, finders, and contributors</p>
+</div>
+</div>
+<div>
+<div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+<a class="uk-position-cover" href="/web/20220714165030/https://disclose.io/programs/"></a>
+<span data-uk-icon="icon: menu; ratio: 3.4" class=""></span>
+<h3 class="uk-card-title uk-margin">The List</h3>
+<p>Search vulnerability disclosure and bug bounty programs in our database, get details on where to submit security findings, and understand their safe harbor status.</p>
+</div>
+</div>
+<div>
+<div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+<a class="uk-position-cover" href="https://web.archive.org/web/20220714165030/https://policymaker.disclose.io/"></a>
+<span data-uk-icon="icon: pencil; ratio: 3.4" class=""></span>
+<h3 class="uk-card-title uk-margin">The Terms</h3>
+<p>Open-source Vulnerability Disclosure Program (VDP) policy boilerplates with Safe Harbor</p>
+</div>
+</div>
+<div>
+<div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+<a class="uk-position-cover" href="/web/20220714165030/https://disclose.io/docs/project-directory/"></a>
+<span data-uk-icon="icon: code; ratio: 3.4" class=""></span>
+<h3 class="uk-card-title uk-margin">Projects</h3>
+<p>Dig in to our Core projects and discover up-and-coming projects and opportunities to collaborate</p>
+</div>
+</div>
+<div>
+<div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-radius-large border-xlight">
+<a class="uk-position-cover" href="https://web.archive.org/web/20220714165030/https://community.disclose.io/"></a>
+<span data-uk-icon="icon: heart; ratio: 3.4" class=""></span>
+<h3 class="uk-card-title uk-margin">Community</h3>
+<p>Get help finding security contacts, and collaborate with like-minded folks working on making the Internet a safer place</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="uk-section section-team">
+<div class="uk-container uk-container-expand">
+<h2 class="uk-h1 uk-text-center">Internet superheroes</h2>
+<p class="uk-text-lead uk-text-center">Some of the legends working on disclose.io who eat, sleep, and breathe making the Internet safer</p>
+<div class="uk-margin-medium-top uk-grid-small uk-flex-center uk-text-center uk-margin-medium-top" data-uk-grid="">
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-cje.jpg" alt="caseyjohnellis"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">caseyjohnellis</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Founding Member</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-amit.jpg" alt="amitelazari"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">amitelazari</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Founding Member</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-chloe.jpg" alt="chloemessdaghi"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">chloemessdaghi</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Founding Member</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-jack.jpg" alt="jack"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">jack</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor/Maintainer</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-harley.jpg" alt="harleygeiger"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">harleygeiger</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor/Maintainer</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-fj.jpg" alt="esquiring"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">esquiring</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor/Maintainer</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-beauwoods.jpg" alt="beauwoods"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">beauwoods</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor/Maintainer</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-jmanoto.jpg" alt="jmanoto"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">jmanoto</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor/Maintainer</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-andrew.jpg" alt="andrewmohawk"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">andrewmohawk</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor/Maintainer</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-sickcodes.jpg" alt="sickcodes"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">sickcodes</h5>
+ <p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor/Maintainer</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-dantrauner.jpg" alt="dantrauner"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">dantrauner</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-jen.jpg" alt="infosecjen"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">infosecjen</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-jhaddix.jpg" alt="jhaddix"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">jhaddix</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-lisa.jpg" alt="its-a-lisa"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">its-a-lisa</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-max.jpg" alt="max"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">max</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-hakluke.jpg" alt="hakluke"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">hakluke</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-jonathan.jpg" alt="jonathan"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">jonathan</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor</p>
+</div>
+</div>
+<div>
+<div class="uk-card">
+<img class="uk-border-circle" src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/avatar-0ddinput.jpg" alt="0ddinput"/>
+<h5 class="uk-margin-remove-bottom uk-margin-top">0ddinput</h5>
+<p class="uk-article-meta uk-margin-remove-bottom uk-margin-small-top">Contributor</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="uk-section">
+<div class="uk-container uk-container-small">
+<h2 class="uk-h1 uk-text-center">Frequently asked questions</h2>
+<p class="uk-text-center uk-text-lead">Got a quick question? Let&#39;s get you a quick answer</p>
+<ul class="uk-margin-medium-top" data-uk-accordion="multiple: true">
+<li>
+<a class="uk-accordion-title uk-box-shadow-hover-small" href="#">Who is disclose.io for?</a>
+<div class="article-content uk-accordion-content link-primary"><ul>
+<li><strong>Hackers and Finders:</strong> You want to help, and you’re not sure that you’re welcome - We want to help you make safe decisions and connect you to the right people to take action on your input</li>
+<li><strong>Legal teams:</strong> Vulnerability reporting and research is tricky, and inviting the help of hackers is still legally novel territory - We want to make it simple for you to make consensus-backed recommendations</li>
+<li><strong>Organizations:</strong> Vulnerabilities are inherent to innovation, but it still takes guts to say so - We want to help you say so loudly and proudly</li>
+<li><strong>Security Researchers:</strong> You’ve been waiting for the red carpet - We’ll help you find it</li>
+</ul>
+</div>
+</li>
+<li>
+<a class="uk-accordion-title uk-box-shadow-hover-small" href="#">How do I interact with or contribute to the disclose.io projects?</a>
+<div class="article-content uk-accordion-content link-primary"><p>Glad you asked!</p>
+<ul>
+<li>Start a vulnerability disclosure program (VDP), or upgrade your VDP or bug bounty program to <strong>include best practices like Safe Harbor and proactive disclosure timelines</strong></li>
+<li><strong><a href="https://web.archive.org/web/20220714165030/https://community.disclose.io/">Join the community,</a></strong> contribute or assist with vulnerability research, and help finders connect with security teams to alert them of identified risks</li>
+<li>Help us <strong>keep “The Big List” of known VDPs and bug bounty programs up-to-date</strong> by submitting a PR to the dioterms repo</li>
+<li><strong>Contribute to the dioterms open-source vulnerability disclosure policy</strong> by raising an issue on the repo… or add a language or regional legal translations by submitting a PR</li>
+<li><strong>Volunteer as a core contributor/maintainer</strong> on one of our existing projects</li>
+<li><strong>Recommend a new project</strong> to support our mission the make vulnerability disclosure safe, simple, and standardized.</li>
+</ul>
+</div>
+</li>
+<li>
+<a class="uk-accordion-title uk-box-shadow-hover-small" href="#">I have an idea for a project, how to I get started?</a>
+<div class="article-content uk-accordion-content link-primary"><p>Awesome! <a href="https://web.archive.org/web/20220714165030/https://disclose.io/contact/">Get in touch</a> via our contact form, we’ll add you to the disclose.io working group Slack, spin up a repo, and go from there!</p>
+</div>
+</li>
+<li>
+<a class="uk-accordion-title uk-box-shadow-hover-small" href="#">Is disclose.io a 501.c3 (Not For Profit)?</a>
+<div class="article-content uk-accordion-content link-primary"><p>disclose.io was formed as a merge of seperate standardization projects initiated by RainForest Puppy, Bugcrowd, Cipherlaw, Dropbox, Dr. Amit Elazari, UC Berkeley, the National Transport and Information Authority, the US Department of Justice, and others.</p>
+<p><img src="/web/20220714165030im_/https://disclose.io/uploads/dio-timeline.png" alt="disclose.io timeline"/></p>
+<p>We’re currently in the process of incorporating and pursuing status as a 501.c3 Not For Profit.</p>
+</div>
+</li>
+<li>
+<a class="uk-accordion-title uk-box-shadow-hover-small" href="#">What is Safe Harbor?</a>
+<div class="article-content uk-accordion-content link-primary"><p>Most of the existing anti-hacking laws pre-date the notion of hacking for good or widespread knowledge of the “digital locksmiths” who are increasingly influencing modern-day digital safety.</p>
+<p>These anti-hacking laws have been <strong>used by organizations to suppress good-faith security research</strong> in the pursuit of limiting negative publicity for the vendor, which nets out to a “chilling effect” on the input from the people the Internet needs to hear from most. <strong>If hackers are the Internet’s Immune System, then right now, even in 2021, the Internet still has an auto-immune problem.</strong></p>
+<p>“Safe Harbor” is the term used to describe clauses added to public policies which allow folks acting in good faith, as defined clearly and proactively by the recipient, to <strong>provide security feedback without fear of legal repercussions.</strong></p>
+<p>disclose.io intends to help define, spread, and reward the adoption of vulnerability disclosure programs with best practices like Safe Harbor.</p>
+</div>
+</li>
+<li>
+<a class="uk-accordion-title uk-box-shadow-hover-small" href="#">Is this legal advice?</a>
+<div class="article-content uk-accordion-content link-primary"><p>While we’ve engaged the legal opinion of many, this does not constitute legal advice. Please consult your legal counsel for the specific suitability of the disclose.io terms in your organization.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="uk-section section-videos">
+<div class="uk-container uk-container-small">
+<h2 class="uk-h1 uk-text-center">Why does The disclose.io Project exist?</h2>
+<p class="uk-text-lead uk-text-center">A couple of talks to get you started...</p>
+<div class="uk-child-width-1-2@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid="" data-uk-lightbox="">
+<div>
+<div class="uk-card uk-card-default uk-box-shadow-small uk-box-shadow-hover-medium uk-card-body uk-inline border-radius-large border-xlight">
+<a class="uk-position-cover" href="https://web.archive.org/web/20220714165030/https://youtu.be/HJPLUqRT_yU" data-caption="An intro to disclose.io and hacker safety"></a>
+<span data-uk-icon="icon: play-circle; ratio: 3.4" class=""></span>
+<h3 class="uk-card-title uk-margin">An intro to disclose.io and hacker safety</h3>
+<p>caseyjohnellis at HackerCon 2021</p>
+</div>
+</div>
+<div>
+<div class="uk-card uk-card-default uk-box-shadow-small uk-box-shadow-hover-medium uk-card-body uk-inline border-radius-large border-xlight">
+<a class="uk-position-cover" href="https://web.archive.org/web/20220714165030/https://www.youtube.com/watch?v=0fMrZCcshyc" data-caption="Hacking the Law - Are Bug Bounties a True Safe Harbor?"></a>
+<span data-uk-icon="icon: play-circle; ratio: 3.4" class=""></span>
+<h3 class="uk-card-title uk-margin">Hacking the Law - Are Bug Bounties a True Safe Harbor?</h3>
+<p>Amit Elazari at BSidesSF 2018</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="uk-section uk-text-center">
+<div class="uk-container uk-container-small">
+<div data-uk-scrollspy="cls: uk-animation-slide-bottom-medium; repeat: true">
+<h2 class="uk-h1 uk-margin-bottom">Didn't find what you were looking for?</h2>
+<a class="uk-button uk-button-primary uk-button-large uk-margin-medium-top" href="/web/20220714165030/https://disclose.io/contact/">Contact Us</a>
+</div>
+</div>
+</div>
+<div id="offcanvas-docs" data-uk-offcanvas="overlay: true">
+<div class="uk-offcanvas-bar">
+<button class="uk-offcanvas-close" type="button" data-uk-close></button>
+<h5 class="uk-margin-top">Introduction</h5>
+<ul class="uk-nav uk-nav-default doc-nav">
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/what-is-disclose/">What is disclose.io</a></li>
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/vision-and-mission/">Vision and Mission</a></li>
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/design-strategy/">Design strategy</a></li>
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/key-objectives/">Key objectives</a></li>
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/diostatus/">diostatus - The disclose.io best practice maturity model</a></li>
+</ul>
+<h5 class="uk-margin-top">Getting started</h5>
+<ul class="uk-nav uk-nav-default doc-nav">
+<li class=""><a href=""></a></li>
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/finders/">For finders and hackers</a></li>
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/recipients/">For organizations and legal teams</a></li>
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/contributors/">Open-source contributors</a></li>
+</ul>
+<h5 class="uk-margin-top">Projects</h5>
+<ul class="uk-nav uk-nav-default doc-nav">
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/project-directory/">Project directory</a></li>
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/join-a-project/">Join a project</a></li>
+</ul>
+<h5 class="uk-margin-top">Resources</h5>
+<ul class="uk-nav uk-nav-default doc-nav">
+<li class=""><a href=""></a></li>
+<li class=""><a href=""></a></li>
+<li class=""><a href=""></a></li>
+</ul>
+<h5 class="uk-margin-top">Community</h5>
+<ul class="uk-nav uk-nav-default doc-nav">
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/discourse/">The disclose.io Discourse</a></li>
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/press-articles/">Press mentions</a></li>
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/talks-and-videos/">Conference talks and videos</a></li>
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/advocacy-and-activism/">Advocacy and activism</a></li>
+<li class=""><a href="/web/20220714165030/https://disclose.io/docs/legal-disclaimer/">Legal disclaimer</a></li>
+</ul>
+</div>
+</div>
+<div id="offcanvas" data-uk-offcanvas="flip: true; overlay: true">
+<div class="uk-offcanvas-bar">
+<a class="uk-logo uk-margin-small-bottom" href="/web/20220714165030/https://disclose.io/"><img src="https://web.archive.org/web/20220714165030im_/https://disclose.io/uploads/logo.svg" alt="The disclose.io Project"></a>
+<button class="uk-offcanvas-close" type="button" data-uk-close></button>
+<ul class="uk-nav uk-nav-primary uk-margin-top">
+<li class="uk-active"><a href="/web/20220714165030/https://disclose.io/">Home</a></li>
+<li><a href="/web/20220714165030/https://disclose.io/docs/what-is-disclose/">Docs</a></li>
+<li><a href="https://web.archive.org/web/20220714165030/https://blog.disclose.io/" target="_blank">Blog</a></li>
+<li><a href="/web/20220714165030/https://disclose.io/history/">History</a></li>
+
+<li><a href="/web/20220714165030/https://disclose.io/programs/">Program Search</a></li>
+</ul>
+<div class="uk-margin-top uk-text-center">
+<div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+<div class="uk-first-column">
+<a href="https://web.archive.org/web/20220714165030/https://twitter.com/disclose_io" data-uk-icon="icon: twitter" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+<div>
+<a href="https://web.archive.org/web/20220714165030/https://www.facebook.com/disclose-io" data-uk-icon="icon: facebook" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+<div>
+<a href="https://web.archive.org/web/20220714165030/https://www.facebook.com/discloseio" data-uk-icon="icon: linkedin" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+<div>
+<a href="https://web.archive.org/web/20220714165030/https://www.youtube.com/c/discloseio" data-uk-icon="icon: youtube" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+<div>
+<a href="https://web.archive.org/web/20220714165030/https://github.com/disclose" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+<div>
+<a href="hello@disclose.io" data-uk-icon="icon: mail" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+<div>
+<a href="https://web.archive.org/web/20220714165030/https://disclose.io/" data-uk-icon="icon: link" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<footer class="uk-section uk-text-center uk-text-muted">
+<div class="uk-container uk-container-small">
+<div>
+<ul class="uk-subnav uk-flex-center">
+<li class="uk-active"><a href="/web/20220714165030/https://disclose.io/">Home</a></li>
+<li><a href="https://web.archive.org/web/20220714165030/https://blog.disclose.io/" target="_blank">Blog</a></li>
+<li><a href="/web/20220714165030/https://disclose.io/contact/">Contact Us</a></li>
+</ul>
+</div>
+<div class="uk-margin-medium">
+<div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+<div class="uk-first-column">
+<a href="https://web.archive.org/web/20220714165030/https://twitter.com/disclose_io" data-uk-icon="icon: twitter" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+<div>
+<a href="https://web.archive.org/web/20220714165030/https://www.facebook.com/disclose-io" data-uk-icon="icon: facebook" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+<div>
+<a href="https://web.archive.org/web/20220714165030/https://www.facebook.com/discloseio" data-uk-icon="icon: linkedin" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+<div>
+<a href="https://web.archive.org/web/20220714165030/https://www.youtube.com/c/discloseio" data-uk-icon="icon: youtube" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+<div>
+<a href="https://web.archive.org/web/20220714165030/https://github.com/disclose" data-uk-icon="icon: github" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+<div>
+<a href="hello@disclose.io" data-uk-icon="icon: mail" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+<div>
+<a href="https://web.archive.org/web/20220714165030/https://disclose.io/" data-uk-icon="icon: link" class="uk-icon-link uk-icon" target="_blank"></a>
+</div>
+</div>
+</div>
+<div class="uk-margin-medium uk-text-small copyright link-secondary">Copyright 2018-2021 disclose.io<br>
+This website is <a href="https://web.archive.org/web/20220714165030/https://github.com/disclose/docs">open-source</a>. Contributions and improvements are welcome!</div>
+</div>
+</footer>
+</body>
+</html>
+<!--
+     FILE ARCHIVED ON 16:50:30 Jul 14, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 23:14:52 Jul 05, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 0.674
+  exclusion.robots: 0.047
+  exclusion.robots.policy: 0.031
+  esindex: 0.013
+  cdx.remote: 19.084
+  LoadShardBlock: 137.117 (3)
+  PetaboxLoader3.resolve: 88.83 (3)
+  PetaboxLoader3.datanode: 103.065 (5)
+  load_resource: 99.234
+  loaddict: 29.146
+-->

@@ -12,6 +12,7 @@ artifact (a git commit, a Wayback snapshot, a standard, or a court/legislative r
 - `sources/LEDGER.md` — every dated claim, how its date was established, and a verified URL
 - `sources/*.md` — key primary-source captures, verbatim
 - `research/predecessor-language-lineage.md` — the three-organization genealogy of the safe-harbor clause
+- `evidence/` — **bit-rot protection**: local byte captures + SHA-256 hashes + Wayback snapshots of every source (see [`evidence/README.md`](evidence/README.md))
 
 ## Method
 Ground-truth hierarchy: git commit author-dates and Wayback snapshot timestamps outrank publish

@@ -1,0 +1,102 @@
+{
+  "sha": "cc83616da10a5fc85b0d662a34855959b4ecb266",
+  "node_id": "MDY6Q29tbWl0MjIyMDEwMTk6Y2M4MzYxNmRhMTBhNWZjODViMGQ2NjJhMzQ4NTU5NTliNGVjYjI2Ng==",
+  "commit": {
+    "author": {
+      "name": "Jason Haddix",
+      "email": "j.haddix56@gmail.com",
+      "date": "2018-04-04T18:11:43Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2018-04-04T18:11:43Z"
+    },
+    "message": "Update and rename responsible_disclosure_policy.md to vulnerability_disclosure_policy.md",
+    "tree": {
+      "sha": "9cb34372d63288bb60824c3834c0a3954d39df76",
+      "url": "https://api.github.com/repos/bugcrowd/disclosure-policy/git/trees/9cb34372d63288bb60824c3834c0a3954d39df76"
+    },
+    "url": "https://api.github.com/repos/bugcrowd/disclosure-policy/git/commits/cc83616da10a5fc85b0d662a34855959b4ecb266",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJaxRVfCRBK7hj4Ov3rIwAAdHIIADPLaZdgvY7l6TNAxtNVtWLA\nkk7l69NB8dA+TTBXvmI47ZOXKhW+pKcZjW5cEzqdAwjRzyJ9BTqCN9u/GwYDXzuc\nHwqPJGVgWPiTvRuCQHd0B+L7bwZ9ZEBNPHEDoda25O6F43DlLdB0XPdmk7a8UgVc\nqPdnYDc9L9uUPggVAlwPxelSrIegZQqcXVAgiLL7ApO+2+QtDp/ohPKJGnggAt4+\njVQ5A89O/hzeo/7Ca8/xz8gRxn962T16o/A0Jy4Z6PYNjChRedQsD1he+kogWW3K\ncoLPA3fNIClvskBrGGcjZtjg5CXJTS2FqS05so526+LB+o4dN04dIyfqtwR+JfE=\n=Pbtl\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 9cb34372d63288bb60824c3834c0a3954d39df76\nparent 0996e2004a4faeb352ee9a1d36a76c3d453084a5\nauthor Jason Haddix <j.haddix56@gmail.com> 1522865503 -0700\ncommitter GitHub <noreply@github.com> 1522865503 -0700\n\nUpdate and rename responsible_disclosure_policy.md to vulnerability_disclosure_policy.md",
+      "verified_at": "2024-11-08T02:02:10Z"
+    }
+  },
+  "url": "https://api.github.com/repos/bugcrowd/disclosure-policy/commits/cc83616da10a5fc85b0d662a34855959b4ecb266",
+  "html_url": "https://github.com/bugcrowd/disclosure-policy/commit/cc83616da10a5fc85b0d662a34855959b4ecb266",
+  "comments_url": "https://api.github.com/repos/bugcrowd/disclosure-policy/commits/cc83616da10a5fc85b0d662a34855959b4ecb266/comments",
+  "author": {
+    "login": "jhaddix",
+    "id": 3488554,
+    "node_id": "MDQ6VXNlcjM0ODg1NTQ=",
+    "avatar_url": "https://avatars.githubusercontent.com/u/3488554?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/jhaddix",
+    "html_url": "https://github.com/jhaddix",
+    "followers_url": "https://api.github.com/users/jhaddix/followers",
+    "following_url": "https://api.github.com/users/jhaddix/following{/other_user}",
+    "gists_url": "https://api.github.com/users/jhaddix/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/jhaddix/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/jhaddix/subscriptions",
+    "organizations_url": "https://api.github.com/users/jhaddix/orgs",
+    "repos_url": "https://api.github.com/users/jhaddix/repos",
+    "events_url": "https://api.github.com/users/jhaddix/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/jhaddix/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "0996e2004a4faeb352ee9a1d36a76c3d453084a5",
+      "url": "https://api.github.com/repos/bugcrowd/disclosure-policy/commits/0996e2004a4faeb352ee9a1d36a76c3d453084a5",
+      "html_url": "https://github.com/bugcrowd/disclosure-policy/commit/0996e2004a4faeb352ee9a1d36a76c3d453084a5"
+    }
+  ],
+  "stats": {
+    "total": 6,
+    "additions": 3,
+    "deletions": 3
+  },
+  "files": [
+    {
+      "sha": "d5b37bdd5d7fb01057289c67ef3c4ad5df7f9a66",
+      "filename": "vulnerability_disclosure_policy.md",
+      "status": "renamed",
+      "additions": 3,
+      "deletions": 3,
+      "changes": 6,
+      "blob_url": "https://github.com/bugcrowd/disclosure-policy/blob/cc83616da10a5fc85b0d662a34855959b4ecb266/vulnerability_disclosure_policy.md",
+      "raw_url": "https://github.com/bugcrowd/disclosure-policy/raw/cc83616da10a5fc85b0d662a34855959b4ecb266/vulnerability_disclosure_policy.md",
+      "contents_url": "https://api.github.com/repos/bugcrowd/disclosure-policy/contents/vulnerability_disclosure_policy.md?ref=cc83616da10a5fc85b0d662a34855959b4ecb266",
+      "patch": "@@ -1,8 +1,8 @@\n-# Responsible Disclosure Policy (Example)\n+# Vulnerability Disclosure Policy (Example)\n \n-[COMPANY] Responsible Disclosure Policy \n+[COMPANY] Vulnerability Disclosure Policy \n \n-We take the security of our systems seriously, and we value the security community. The responsible disclosure of security vulnerabilities helps us ensure the security and privacy of our users.\n+We take the security of our systems seriously, and we value the security community. The disclosure of security vulnerabilities helps us ensure the security and privacy of our users.\n \n **Guidelines**  \n ",
+      "previous_filename": "responsible_disclosure_policy.md"
+    }
+  ]
+}

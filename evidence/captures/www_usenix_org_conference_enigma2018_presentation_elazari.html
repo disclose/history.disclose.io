@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9"  lang="en" dir="ltr" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"  lang="en" dir="ltr" prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+<link rel="shortcut icon" href="https://www.usenix.org/themes/motherboard/favicon.ico" type="image/vnd.microsoft.icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="citation_title" content="Hacking the Law: Are Bug Bounties a True Safe Harbor?" />
+<meta name="citation_author" content="Amit Elazari" />
+<meta name="citation_author_institution" content="Doctoral Candidate, Berkeley Law, Research Fellow, CTSP, Berkeley School of Information" />
+<meta name="citation_author_email" content="amit.elazari@berkeley.edu" />
+<meta name="citation_publication_date" content="2018" />
+<meta name="citation_conference_title" content="Enigma 2018 (Enigma 2018)" />
+    <title>Hacking the Law: Are Bug Bounties a True Safe Harbor? | USENIX</title>
+    <link rel="stylesheet" href="https://www.usenix.org/sites/default/files/css/css_nCq0Tqg9eqZPa5fXfe0k9wAX8jnxbXlZ75LfGb5rq7A.css" media="all" />
+<link rel="stylesheet" href="https://www.usenix.org/sites/default/files/css/css_2i5hNf7GrbmdIRSKLAmKbqqhLsXPdxtef5MzSaLSGkY.css" media="all" />
+<style media="all">#backtotop{bottom:20px;right:20px;}
+</style>
+<link rel="stylesheet" href="https://www.usenix.org/sites/default/files/css/css_WuQ7N7s3FQCMZ10IwPuHHTmFbboYlza6RUpvUA0GnLs.css" media="all" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" media="all" />
+<link rel="stylesheet" href="https://www.usenix.org/sites/default/files/css/css_JILHL6Wb10sizars6LLOOYwch4plY1vMzJw7dixd2OE.css" media="all" />
+<link rel="stylesheet" href="https://www.usenix.org/sites/default/files/css/css_qFgpkJD9LCbzFq1MQrtO4IkZu4u0bPvQ41XA-NJVJPM.css" media="all and (min-width: 60em)" />
+<link rel="stylesheet" href="https://www.usenix.org/sites/default/files/css/css_wzx2lWqmWLMrXRsTdlZprjZhheNa_RSBwK7is7IxX5g.css" media="all" />
+    <script>window.Backdrop = {settings: {"basePath":"\/","pathPrefix":"","drupalCompatibility":true,"ajaxPageState":{"theme":"neat_conference","theme_token":"rHnng1_Mkxv1o6zAJV6h_vW1RGZaAv_3ldJ1EHvwPwI","css":{"core\/misc\/normalize.css":1,"core\/modules\/system\/css\/system.css":1,"core\/modules\/system\/css\/system.theme.css":1,"core\/modules\/system\/css\/messages.theme.css":1,"modules\/contrib\/back_to_top\/css\/back_to_top.css":1,"modules\/custom\/adamm\/css\/base.css":1,"modules\/custom\/adamm\/css\/dropdown.css":1,"core\/modules\/comment\/css\/comment.css":1,"core\/modules\/date\/css\/date.css":1,"core\/modules\/field\/css\/field.css":1,"modules\/contrib\/og\/css\/og.css":1,"modules\/contrib\/paragraphs\/css\/paragraphs.css":1,"core\/modules\/search\/search.theme.css":1,"modules\/contrib\/special_menu_items\/css\/special_menu_items.css":1,"modules\/custom\/usenix_conference\/css\/timezone-picker.css":1,"modules\/custom\/usenix_logo_preview\/css\/usenix_logo_preview.css":1,"core\/modules\/user\/css\/user.css":1,"modules\/contrib\/workflow\/workflow_admin_ui\/workflow_admin_ui.css":1,"core\/modules\/views\/css\/views.css":1,"modules\/contrib\/rules\/rules.css":1,"0":1,"modules\/contrib\/geshifilter\/geshifilter.css":1,"modules\/custom\/biblio\/biblio.css":1,"layouts\/neat_conference\/neat-conference.css":1,"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/font-awesome\/4.4.0\/css\/font-awesome.min.css":1,"modules\/contrib\/tb_megamenu\/css\/bootstrap.css":1,"modules\/contrib\/tb_megamenu\/css\/base.css":1,"modules\/contrib\/tb_megamenu\/css\/default.css":1,"modules\/contrib\/tb_megamenu\/css\/compatibility.css":1,"core\/modules\/system\/css\/menu-dropdown.theme.breakpoint.css":1,"core\/modules\/system\/css\/menu-dropdown.theme.breakpoint-queries.css":1,"themes\/neat_conference\/css\/neat.css":1,"themes\/neat_conference\/css\/schemes\/scheme-atc.css":1,"themes\/neat_conference\/css\/schemes\/scheme-atc_colo.css":1,"themes\/neat_conference\/css\/schemes\/scheme-atc_colo_dark.css":1,"themes\/neat_conference\/css\/schemes\/scheme-enigma.css":1,"themes\/neat_conference\/css\/schemes\/scheme-enigma_temp.css":1,"themes\/neat_conference\/css\/schemes\/scheme-fast.css":1,"themes\/neat_conference\/css\/schemes\/scheme-lisa_lean.css":1,"themes\/neat_conference\/css\/schemes\/scheme-lisa.css":1,"themes\/neat_conference\/css\/schemes\/scheme-lisa_blue.css":1,"themes\/neat_conference\/css\/schemes\/scheme-lisa_red.css":1,"themes\/neat_conference\/css\/schemes\/scheme-lisa_green.css":1,"themes\/neat_conference\/css\/schemes\/scheme-nsdi.css":1,"themes\/neat_conference\/css\/schemes\/scheme-osdi.css":1,"themes\/neat_conference\/css\/schemes\/scheme-security.css":1,"themes\/neat_conference\/css\/schemes\/scheme-security_colo.css":1,"themes\/neat_conference\/css\/schemes\/scheme-soups.css":1,"themes\/neat_conference\/css\/schemes\/scheme-srecon.css":1,"themes\/neat_conference\/css\/schemes\/scheme-pepr_woot.css":1,"themes\/neat_conference\/fonts\/fontawesome\/css\/all.min.css":1,"themes\/neat_conference\/system.theme.css":1},"js":{"public:\/\/google_tag\/google_tag.script.js":1,"modules\/contrib\/jquery_update\/replace\/jquery\/1.12\/jquery.min.js":1,"core\/misc\/jquery.once.js":1,"core\/misc\/backdrop.js":1,"modules\/contrib\/behavior_weights\/js\/behavior_weights.js":1,"modules\/contrib\/jquery_update\/js\/jquery_browser.js":1,"modules\/contrib\/beautytips\/js\/jquery.bt.min.js":1,"modules\/contrib\/beautytips\/js\/beautytips.js":1,"modules\/contrib\/back_to_top\/js\/back_to_top.js":1,"modules\/custom\/adamm\/js\/accessible-menu\/dist\/disclosure-menu.iife.js":1,"modules\/custom\/adamm\/js\/contentexpander\/contentExpander.js":1,"modules\/custom\/adamm\/js\/adamm.js":1,"modules\/contrib\/views_slideshow\/js\/views_slideshow.js":1,"modules\/contrib\/views_slideshow\/contrib\/views_slideshow_cycle\/js\/formoptions.js":1,"modules\/contrib\/views_slideshow\/contrib\/views_slideshow_cycle\/js\/views_slideshow_cycle.js":1,"modules\/contrib\/beautytips\/other_libs\/jquery.hoverIntent.minified.js":1,"modules\/contrib\/field_group\/js\/field_group.js":1,"modules\/contrib\/field_group\/js\/field_groups.js":1,"modules\/contrib\/tb_megamenu\/js\/tb-megamenu-frontend.js":1,"modules\/contrib\/tb_megamenu\/js\/tb-megamenu-touch.js":1,"core\/modules\/system\/js\/menus.js":1,"themes\/neat_conference\/js\/bibtex.js":1,"themes\/neat_conference\/js\/mobile.js":1,"themes\/neat_conference\/js\/jquery.slicknav.min.js":1,"themes\/neat_conference\/js\/tech-schedule.js":1,"themes\/neat_conference\/js\/training-program.js":1,"themes\/neat_conference\/js\/organizers.js":1,"themes\/neat_conference\/js\/protected-files.js":1}},"back_to_top":{"distance":"100","text":"Back to top","title":1,"type":"image","disable_mobile":0},"beautytipStyles":{"default":[],"plain":[],"netflix":{"positions":["right","left"],"fill":"#FFF","padding":5,"shadow":true,"shadowBlur":12,"strokeStyle":"#B9090B","spikeLength":50,"spikeGirth":20,"cornerRadius":10,"centerPointY":0.1,"overlap":-8,"cssStyles":{"fontSize":"12px","fontFamily":"arial,helvetica,sans-serif"}},"facebook":{"fill":"#F7F7F7","padding":8,"strokeStyle":"#B7B7B7","cornerRadius":0,"cssStyles":{"fontFamily":"\u0022lucida grande\u0022,tahoma,verdana,arial,sans-serif","fontSize":"11px"}},"transparent":{"fill":"rgba(0, 0, 0, .8)","padding":20,"strokeStyle":"#CC0","strokeWidth":3,"spikeLength":40,"spikeGirth":40,"cornerRadius":40,"cssStyles":{"color":"#FFF","fontWeight":"bold"}},"big-green":{"fill":"#00FF4E","padding":20,"strokeWidth":0,"spikeLength":40,"spikeGirth":40,"cornerRadius":15,"cssStyles":{"fontFamily":"\u0022lucida grande\u0022,tahoma,verdana,arial,sans-serif","fontSize":"14px"}},"google-maps":{"positions":["top","bottom"],"fill":"#FFF","padding":15,"strokeStyle":"#ABABAB","strokeWidth":1,"spikeLength":65,"spikeGirth":40,"cornerRadius":25,"centerPointX":0.9,"cssStyles":{"fontSize":"12px","fontFamily":"arial,helvetica,sans-serif"}},"hulu":{"fill":"#F4F4F4","strokeStyle":"#666666","spikeLength":20,"spikeGirth":10,"width":350,"overlap":0,"centerPointY":1,"cornerRadius":0,"cssStyles":{"fontFamily":"\u0022Lucida Grande\u0022,Helvetica,Arial,Verdana,sans-serif","fontSize":"12px","padding":"10px 14px"},"shadow":true,"shadowColor":"rgba(0,0,0,.5)","shadowBlur":8,"shadowOffsetX":4,"shadowOffsetY":4}},"beautytips":{".beautytips":{"cssSelect":".beautytips","style":null}},"field_group":{"div":"full","hidden":"full"}}};</script>
+<script defer="defer" src="https://www.usenix.org/sites/default/files/google_tag/google_tag.script.js?thq581"></script>
+<script src="https://www.usenix.org/sites/default/files/js/js_bZlYCeUOgUn_Zy3vTWwKIeA3h8k-K96O5_iBg4r0XoU.js"></script>
+<script src="https://www.usenix.org/sites/default/files/js/js_nMqxMI6GSYBj21S6Dfarn5Pj4k7mEy4GyxtpkWgmSvM.js"></script>
+<script src="https://www.usenix.org/sites/default/files/js/js_Hlb3Ws6cGMVcY0OsEf_ANFK6ZxjxYMG37Nel5e0OEqc.js"></script>
+<script src="https://www.usenix.org/sites/default/files/js/js_EHjH2FmuKBCagvIIRM8BcQsvyZFk2jHkmSBp8WKSN94.js"></script>
+<script src="https://www.usenix.org/sites/default/files/js/js_c5N3h8HQSfLml0L3WIQRkyU8h42n0j1FsAMCz_THR04.js"></script>
+
+  </head>
+  <body class="page node-type-paper scheme-enigma user-is-non-member">
+    <div class="layout--neat_conference" id="page-wrapper"><div id="page">
+<div role="document" class="page">
+  <header id="site-header" class="site-header">
+    <div class="usenix-login-bar">
+        <section class="block block-usenix-login-bar-usenix-login-bar-block usenix-login-bar-block block-usenix-login-bar">
+
+  
+  <a href="/" id="site-logo" class="site-logo back-to-usenix">Back to USENIX</a><div class="item-list"><ul id="usenix-login-bar-links" class="usenix-login-bar-links"><li class="login odd first"><a href="/user/login?destination=conference/enigma2018/presentation/elazari">Sign In</a></li><li class="conference even last"><a href="/conferences">Conferences</a></li></ul></div>
+</section>    </div>
+    <div class="usenix-announcement-banner-region">
+          </div>
+    <div class="outer-wrapper">
+      <div class="header-col2-wrapper">
+              </div>
+      <div class="header-col1-wrapper">
+          <section class="block block-usenix-og-auto-menu-usenix-og-auto-header-menu-logo">
+
+  
+  <a href="/conference/enigma2018" class="header-menu-logo-link"><img class="header-menu-logo" src="https://www.usenix.org/sites/default/files/styles/neat_conference_menu_logo/public/enigma-logo_red_tm_2000x733.png" width="115" height="42" alt="" /></a>
+</section>  <section class="block block-usenix-og-auto-menu-usenix-og-auto-header-menu">
+
+  
+  <div  class="tb-megamenu tb-megamenu-menu-og-202523" role="navigation" aria-label="Main navigation">
+      <button data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar tb-megamenu-button" type="button">
+      <i class="fa fa-reorder"></i>
+    </button>
+    <div class="nav-collapse  always-show">
+    <ul  class="tb-megamenu-nav nav level-0 items-5">
+    <li  data-id="37360" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" header_hide="0" footer_hide="0" id="" style="" class="tb-megamenu-item level-1 mega dropdown">
+          <a href="/conference/enigma2018#registration"  class="dropdown-toggle">
+                Attend                      </a>
+        <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-class="" data-width="6" data-hidewcol="" id="tb-megamenu-column-1" class="tb-megamenu-column span6  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul  class="tb-megamenu-subnav mega-nav level-1 items-2">
+    <li  data-id="37530" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" header_hide="0" footer_hide="0" id="" style="" class="tb-megamenu-item level-2 mega">
+          <a href="/conference/enigma2018/venue-hotel-and-travel" >
+                Venue, Hotel, and Travel                      </a>
+          </li>
+
+  <li  data-id="37363" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" header_hide="0" footer_hide="0" id="" style="" class="tb-megamenu-item level-2 mega">
+          <a href="/conference/enigma2018/services" >
+                Services                      </a>
+          </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+  </li>
+
+  <li  data-id="37362" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" header_hide="0" footer_hide="0" id="" style="" class="tb-megamenu-item level-1 mega dropdown">
+          <a href="/conference/enigma2018/program"  class="dropdown-toggle">
+                Program                      </a>
+        <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-class="" data-width="6" data-hidewcol="0" id="tb-megamenu-column-2" class="tb-megamenu-column span6  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul  class="tb-megamenu-subnav mega-nav level-1 items-1">
+    <li  data-id="39840" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" header_hide="0" footer_hide="0" id="" style="" class="tb-megamenu-item level-2 mega">
+          <a href="/conference/enigma2018/program" >
+                Conference Program                      </a>
+          </li>
+</ul>
+  </div>
+</div>
+
+<div  data-class="" data-width="6" data-hidewcol="" id="tb-megamenu-column-3" class="tb-megamenu-column span6  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul  class="tb-megamenu-subnav mega-nav level-1 items-1">
+    <li  data-id="37497" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" header_hide="0" footer_hide="0" id="" style="" class="tb-megamenu-item level-2 mega">
+          <a href="/conference/enigma2018/evening-events" >
+                Evening Events                      </a>
+          </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+  </li>
+
+  <li  data-id="35692" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" header_hide="0" footer_hide="0" id="" style="" class="tb-megamenu-item level-1 mega dropdown">
+          <a href="/conference/enigma2018/call-for-participation"  class="dropdown-toggle">
+                Participate                      </a>
+        <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-class="" data-width="6" data-hidewcol="0" id="tb-megamenu-column-4" class="tb-megamenu-column span6  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul  class="tb-megamenu-subnav mega-nav level-1 items-1">
+    <li  data-id="37540" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" header_hide="0" footer_hide="0" id="" style="" class="tb-megamenu-item level-2 mega">
+          <a href="/conference/enigma2018/call-for-participation" >
+                Call for Participation                      </a>
+          </li>
+</ul>
+  </div>
+</div>
+
+<div  data-class="" data-width="6" data-hidewcol="" id="tb-megamenu-column-5" class="tb-megamenu-column span6  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul  class="tb-megamenu-subnav mega-nav level-1 items-1">
+    <li  data-id="36344" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" header_hide="0" footer_hide="0" id="" style="" class="tb-megamenu-item level-2 mega">
+          <a href="/conference/enigma2018/speaker-information" >
+                Speaker Information                      </a>
+          </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+  </li>
+
+  <li  data-id="35687" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" header_hide="0" id="" style="" class="tb-megamenu-item level-1 mega">
+          <a href="/conference/enigma2018#sponsorship" >
+                Sponsorship                      </a>
+          </li>
+
+  <li  data-id="37364" data-level="1" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" header_hide="0" footer_hide="0" id="" style="" class="tb-megamenu-item level-1 mega dropdown">
+          <a href="/conference/enigma2018#about"  class="dropdown-toggle">
+                About                      </a>
+        <div  data-class="" data-width="" class="tb-megamenu-submenu dropdown-menu mega-dropdown-menu nav-child">
+  <div class="mega-dropdown-inner">
+    <div  class="tb-megamenu-row row-fluid">
+  <div  data-class="" data-width="12" data-hidewcol="0" id="tb-megamenu-column-6" class="tb-megamenu-column span12  mega-col-nav">
+  <div class="tb-megamenu-column-inner mega-inner clearfix">
+        <ul  class="tb-megamenu-subnav mega-nav level-1 items-1">
+    <li  data-id="37681" data-level="2" data-type="menu_item" data-class="" data-xicon="" data-caption="" data-alignsub="" data-group="0" data-hidewcol="0" data-hidesub="0" header_hide="0" footer_hide="0" id="" style="" class="tb-megamenu-item level-2 mega">
+          <a href="/conference/enigma2018#organizers" >
+                Conference Organizers                      </a>
+          </li>
+</ul>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+  </li>
+</ul>
+      </div>
+  </div>
+
+</section>      </div>
+    </div>
+  </header>
+  
+  <main role="main">
+
+    <section id="content">
+              <div class="outer-wrapper">
+                      <h1 id="page-title">Hacking the Law: Are Bug Bounties a True Safe Harbor?</h1>
+                  </div>
+      
+      
+      
+      <article id="node-208178" class="node node-paper view-mode-full">
+
+        
+  
+  <div class="content">
+    <div class="field field-name-field-date-and-time-12-hour- field-type-date field-label-hidden"><div class="field-items field-items"><div class="field-item odd"><span class="date-display-single">Thursday, January 18, 2018 - <span class="date-display-range"><span class="date-display-start">9:30 am</span>–<span class="date-display-end">10:00 am</span></span></span></div></div></div><div class="field field-name-field-presented-by field-type-text-long field-label-hidden"><div class="field-items field-items"><div class="field-item odd"><p>Amit Elazari, Doctoral Candidate, Berkeley Law, Research Fellow, CTSP, Berkeley School of Information</p></div></div></div><div class="field field-name-field-paper-description field-type-text-long field-label-hidden"><div class="field-items field-items"><div class="field-item odd"><p> While the bug bounty economy is booming, a novel survey of bug bounty terms reveals that platforms and companies sometimes put hackers in “legal” harm’s way, shifting the risk for civil and criminal liability towards hackers instead of authorizing access and creating “safe harbors.” This is a call for action to hackers to unite, negotiate and influence the emerging landscape of cyberlaw, since hackers’ actions speak louder than scholars’ words. I suggest simple steps that could and should be taken in order to minimize the legal risks of thousands of hackers participating in bug bounties and create a “race-to-the-top” competition over the quality of bug bounty terms. I further suggest that the industry should move towards standardization of legal terms, especially in light of the recent DOJ framework. Hackers will learn not only which terms they should beware of in light of recent developments in anti-hacking laws, but which terms they, individually and through the platform, should demand to see to ensure “authorized access.” Most importantly, this is a case study of how a united front of hackers could demand and negotiate important rights, similar to what is done by organizations in other industries. Contracts and laws will continue to play a role in the highly regulated cyber landscape, conflicts of interests will inevitably arise, therefore hackers should not only pay attention to the fine print, but unite and negotiate for better terms.</p></div></div></div><div class="field field-name-field-paper-people field-type-node-reference field-label-hidden"><div class="field-items field-items"><div class="field-item odd"><article id="node-208237" class="node node-speaker view-mode-schedule">
+
+  
+  
+  <div class="content">
+    <div class="field field-name-field-speakers-photo field-type-image field-label-hidden"><div class="field-items field-items"><div class="field-item odd"><img src="https://www.usenix.org/sites/default/files/styles/speaker_photo/public/elazari_amit_100x115.png" width="100" height="115" alt="" /></div></div></div><div class="field field-name-body field-type-text-with-summary field-label-hidden"><div class="field-items field-items"><div class="field-item odd"><p>Amit is a doctoral law candidate at Berkeley Law, one of the world’s leading institutions in law and technology, and a Research Fellow at CTSP, Berkeley School of Information. Her work on Cyberlaw and Intellectual Property has been published in the Canadian Intellectual Property Journal, Berkeley Technology Law Journal (BTLJ) and Berkeley Business Law Journal blogs and presented in leading security, Internet Law and IP conferences. Additionally, Amit serves as the submissions editor of BTLJ, the world’s leading IP and Tech Law Journal and as professors Deirdre Mulligan and Kenneth Bamberger, leaders in cyber law, and Professor Peter Menell, a leader in copyright law, research assistant. On 2017, Amit moderated a Key-Note session at the Women in Cyber Security 2017 (WiCyS) conference and presented her research on bug bounties at BsidesLV and Defcon (Skytalks).</p></div></div></div><div class="field field-name-field-twitter-handle field-type-link-field field-label-inline clearfix"><div class="field-label">Connect:&nbsp;</div><div class="field-items field-items"><div class="field-item odd"><a href="https://twitter.com/amitelazari" target="_blank" class="pipe">@amitelazari</a></div></div></div>  </div>
+
+        
+    
+</article>
+</div></div></div><div class="usenix-files-protected"><img src="https://www.usenix.org/modules/custom/usenix_files/images/usenix-locked.png" alt="" /></div><div class="field field-name-field-bibtex-node field-type-node-reference field-label-hidden"><div class="field-items field-items"><div class="field-item odd"><div class="bibtex-accordion"><div class="bibtex-accordion-label">BibTeX</div><div class="bibtex-accordion-content"><div class="bibtex-text-entry bibtex-accordion-text-entry">@inproceedings {208177,<br />
+	author = {Amit Elazari},<br />
+	title = {Hacking the Law: Are Bug Bounties a True Safe Harbor?},<br />
+	booktitle = {Enigma 2018 (Enigma 2018)},<br />
+	year = {2018},<br />
+	address = {Santa Clara, CA},<br />
+	url = {https://www.usenix.org/node/208178},<br />
+	publisher = {USENIX Association},<br />
+	month = jan<br />
+}<br />
+</div><div class="bibtex-download-link bibtex-accordion-download-link"><a href="/biblio/export/bibtex/208177">Download</a></div></div></div></div></div></div><h2 class="field field-name-field-embed-video field-type-video-embed-field field-label-above"><span class="field-label">Presentation Video&nbsp;</span><span class="field-item odd first last">
+<div class="embedded-video">
+  <div class="player">
+    <iframe title="YouTube video" class="large-12 medium-12 small-12 columns usenix-schedule-media" width="745" height="420" src="//www.youtube.com/embed/riZIFOw0pJA?width%3D745%26amp%3Bheight%3D420%26amp%3Btheme%3Ddark%26amp%3Bautoplay%3D0%26amp%3Bvq%3Dhd720%26amp%3Brel%3D0%26amp%3Bshowinfo%3D0%26amp%3Bmodestbranding%3D0%26amp%3Biv_load_policy%3D1%26amp%3Bcontrols%3D1%26amp%3Bautohide%3D2%26amp%3Bwmode%3Dopaque" frameborder="0" allowfullscreen></iframe>  </div>
+</div>
+</span></h2>  </div>
+
+        
+  <ul class="links inline"><li class="comment-forbidden odd first last"><span><a href="/user/login?destination=comment/reply/208178%23comment-form">Log in</a> or <a href="/user/register?destination=comment/reply/208178%23comment-form">register</a> to post comments</span></li></ul>  
+</article>
+    </section>
+
+  </main>
+
+      <footer id="site-footer" role="contentinfo" class="site-footer">
+              <section class="footer-top">
+            <section class="block block-usenix-og-auto-menu-usenix-og-auto-footer-menu">
+
+  
+  <ul class="menu"><li class="first expanded has-children menu-mlid-37360"><a href="/conference/enigma2018#registration">Attend</a><ul><li class="first leaf menu-mlid-37530"><a href="/conference/enigma2018/venue-hotel-and-travel">Venue, Hotel, and Travel</a></li>
+<li class="last leaf menu-mlid-37363"><a href="/conference/enigma2018/services">Services</a></li>
+</ul></li>
+<li class="expanded has-children menu-mlid-37362"><a href="/conference/enigma2018/program">Program</a><ul><li class="first leaf menu-mlid-39840"><a href="/conference/enigma2018/program">Conference Program</a></li>
+<li class="last leaf menu-mlid-37497"><a href="/conference/enigma2018/evening-events">Evening Events</a></li>
+</ul></li>
+<li class="expanded has-children menu-mlid-35692"><a href="/conference/enigma2018/call-for-participation">Participate</a><ul><li class="first leaf menu-mlid-37540"><a href="/conference/enigma2018/call-for-participation">Call for Participation</a></li>
+<li class="last leaf menu-mlid-36344"><a href="/conference/enigma2018/speaker-information">Speaker Information</a></li>
+</ul></li>
+<li class="leaf menu-mlid-35687"><a href="/conference/enigma2018#sponsorship">Sponsorship</a></li>
+<li class="last expanded has-children menu-mlid-37364"><a href="/conference/enigma2018#about">About</a><ul><li class="first last leaf menu-mlid-37681"><a href="/conference/enigma2018#organizers">Conference Organizers</a></li>
+</ul></li>
+</ul>
+</section>        </section>
+                    <section class="footer-bottom">
+            <section class="block block-usenix-conference-og-conference-social-icon">
+
+  
+  <article id="node-202523" class="node node-conference view-mode-social-icon">
+
+  <div class="content">
+    <a href="https://twitter.com/enigmaconf" target="_blank"><span class="fab fa-x-twitter"></span><span class="offscreen">Twitter</span></a><a href="https://www.facebook.com/enigmaconf" target="_blank"><span class="fab fa-facebook-f"></span><span class="offscreen">Facebook</span></a><a href="https://plus.google.com/+USENIXEnigmaConference" target="_blank"><span class="fab fa-google-plus-g"></span><span class="offscreen">Google</span></a><a href="https://www.youtube.com/c/USENIXEnigmaConference" target="_blank"><span class="fab fa-youtube"></span><span class="offscreen">Youtube</span></a>  </div>
+
+</article>
+
+</section>  <section class="block block-menu-menu-footer" role="navigation">
+
+  
+  <ul class="menu-tree menu" data-menu-style="tree" data-clickdown="0" data-collapse="default"><li class="first leaf menu-mlid-2774"><a href="/privacy-policy">Privacy Policy</a></li>
+<li class="last leaf menu-mlid-2775"><a href="/contact">Contact Us</a></li>
+</ul>
+</section>  <section class="block block-block-27">
+
+  
+  <div style="padding-top: .25em;">
+	<p style="color: inherit;">&copy; USENIX <script>new Date().getFullYear()>document.write(new Date().getFullYear());</script><br>
+        EIN 13-3055038</p>
+</div>
+</section>        </section>
+          </footer>
+  </div>
+      <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a16a1189cf08303f',t:'MTc4MzI5MzI5Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

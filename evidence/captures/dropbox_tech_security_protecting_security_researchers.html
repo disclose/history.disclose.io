@@ -1,0 +1,594 @@
+<!doctype html>
+
+
+    
+    
+    
+
+    
+
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+    <html lang="en" xml:lang="en" data-cms-lang="en-us">
+    <head>
+        
+<meta charset="utf-8"/>
+
+<title>Protecting Security Researchers - Dropbox</title>
+
+
+
+
+
+<meta name="data-tags" content="Vdp,Security,Bug Bounty Program"/>
+<meta name="data-tagTaxonomy" content="Bug Bounty Program; Security; Vdp;"/>
+<meta name="page-id" content="security-protecting-security-researchers"/>
+<meta name="topic" content="Security"/>
+
+<meta name="publishDate" content="2018-03-21 09:00:07.000-0700"/>
+
+<meta name="author" content="Chris Evans"/>
+
+<link rel="canonical" href="https://dropbox.tech/security/protecting-security-researchers"/>
+
+
+
+
+<link rel="icon" href="/cms/content/dam/dropbox/aem/favicon32.ico" type="image/x-icon"/>
+
+
+
+
+
+<meta property="og:url" content="https://dropbox.tech/security/protecting-security-researchers"/>
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="Protecting Security Researchers"/>
+
+<meta property="og:image" content="https://aem.dropbox.com/cms/content/dam/dropbox/tech-blog/en-us/security/dropbox-tech-security-1-1200-628.png"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+
+
+
+<meta content="width=device-width,initial-scale=1.0,user-scalable=no" name="viewport"/>
+
+
+
+
+  <link rel="alternate" hreflang="en-us" href="https://dropbox.tech/security/protecting-security-researchers"/>
+
+
+
+
+  <!-- Adobe Launch Tag
+  <sly data-sly-test.launchScriptUrl="https://assets.adobedtm.com/7c31e7b46b8e/d19004ab8783/launch-9d6b92cf511d.min.js">
+      <script src="" async></script>
+  </sly>-->
+  <input type="hidden" id="launchurl" name="launchurl" value="https://assets.adobedtm.com/7c31e7b46b8e/d19004ab8783/launch-9d6b92cf511d.min.js"/>
+  
+    
+<script type="text/javascript" src="/cms/etc.clientlibs/settings/wcm/designs/adobe-launch.69d49deacff84e18078620ea5d69520e.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--/* Calling the tealium utag sync to avoid adobe target flickering */ -->
+
+
+
+
+    
+         
+          <!-- CMS-5456 : Optimizing target calls -->
+                
+         
+    
+
+<!-- /* Calling the tealium utag sync to avoid adobe target flickering */  -->
+
+    
+
+
+
+
+
+        
+
+        
+
+
+
+
+
+
+
+
+
+<!-- /* Enable rebrand styles  */
+<sly data-sly-use.inheritUtil="com.dropbox.aem.common.models.utils.InheritanceUtilUse"
+     data-sly-test.pageStyle="" /> -->
+
+     
+    
+<link rel="stylesheet" href="/cms/etc.clientlibs/settings/wcm/designs/dropbox-common/clientlib-cms-common.fe1280fde62f39dc26aa28abd1e11743.css" type="text/css">
+<link rel="stylesheet" href="/cms/etc.clientlibs/settings/wcm/designs/dropbox-tech-blog/clientlib-all.706c697ebfafea32e18a38f788e663e8.css" type="text/css">
+
+
+
+
+    
+<link rel="stylesheet" href="/cms/etc.clientlibs/settings/wcm/designs/dropbox-tech-blog/clientlib-article-content.853221554a5d292bfd31a6140d9662f9.css" type="text/css">
+
+
+
+    </head>
+    <body class="tech-blog-article-page__page    stormcrow-animate   " data-article-uuid="2a901b1a-40cc-46e7-b80f-4f1ccf2b04ca">
+
+        
+
+        
+        <input type="hidden" id="wcmRunmode" name="wcmRunmode" value="publish,prod"/>
+        
+
+        
+        
+
+<header class="dr-header">
+
+
+
+
+<div class="dr-header__sticky-container">
+  <section class="dr-header__section dr-flex dr-flex--align-center dr-padding-right-40 dr-padding-left-40 dr-header__sticky-content-container dr-header__sticky-content-container--opened dr-container--surface">
+    <div class="dr-flex-1">
+      <a class="dr-link dr-link--no-underline dr-link--no-underline-hover dr-typography-t1" href="https://dropbox.tech/">Dropbox.Tech</a>
+    </div>
+    
+
+<button class="dr-header__item dr-nav__menu-toggle-button dr-button dr-hide-from-md dr-flex dr-flex-align-center dr-flex-justify-center" data-dr-tooltip="Menu" data-dr-tooltip-theme="white">
+  <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="dr-width-100 dr-height-100">
+    <rect x="0.501831" y="8" width="28" height="2" fill="white"></rect>
+    <rect x="0.500977" y="18" width="28" height="2" fill="white"></rect>
+  </svg>
+</button>
+<nav class="dr-show-block-from-md dr-nav__nav">
+  <button class="dr-button dr-nav__menu-close-button">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M19.2875 2.15983L17.6683 0.566406L9.82597 8.28403L2.33211 0.909344L0.71294 2.50277L8.2068 9.87746L0.666992 17.2974L2.28617 18.8908L9.82597 11.4709L17.7143 19.2337L19.3334 17.6403L11.4451 9.87746L19.2875 2.15983Z" fill="white"/>
+    </svg>
+  </button>
+  <ul class="dr-unstyled-list dr-typography-t2 dr-flex dr-nav__nav-list">
+    <li class="dr-header__item dr-position-relative dr-header__item--with-subnav dr-header__list-item">
+      <button class="dr-button dr-button--link dr-header__link--with-subnav">Topics</button>
+      <ul class="dr-unstyled-list dr-display-none dr-header__subnav dr-position-absolute dr-container--surface dr-padding-top-30 dr-padding-left-40 dr-padding-bottom-20 dr-padding-right-40 dr-font-weight-500">
+        <li class="dr-header__list-item dr-header__list-item--subnav"><a href="https://dropbox.tech/application" class="dr-display-block dr-link dr-link--no-underline dr-container--application dr-link--primary">Application</a></li>
+      
+        <li class="dr-header__list-item dr-header__list-item--subnav"><a href="https://dropbox.tech/frontend" class="dr-display-block dr-link dr-link--no-underline dr-container--frontend dr-link--primary">Front End</a></li>
+      
+        <li class="dr-header__list-item dr-header__list-item--subnav"><a href="https://dropbox.tech/infrastructure" class="dr-display-block dr-link dr-link--no-underline dr-container--infrastructure dr-link--primary">Infrastructure</a></li>
+      
+        <li class="dr-header__list-item dr-header__list-item--subnav"><a href="https://dropbox.tech/machine-learning" class="dr-display-block dr-link dr-link--no-underline dr-container--machine-learning dr-link--primary">Machine Learning</a></li>
+      
+        <li class="dr-header__list-item dr-header__list-item--subnav"><a href="https://dropbox.tech/mobile" class="dr-display-block dr-link dr-link--no-underline dr-container--mobile dr-link--primary">Mobile</a></li>
+      
+        <li class="dr-header__list-item dr-header__list-item--subnav"><a href="https://dropbox.tech/security" class="dr-display-block dr-link dr-link--no-underline dr-container--security dr-link--primary">Security</a></li>
+      
+        <li class="dr-header__list-item dr-header__list-item--subnav"><a href="https://dropbox.tech/culture" class="dr-display-block dr-link dr-link--no-underline dr-container--culture dr-link--primary">Culture</a></li>
+      </ul>
+    </li>
+    <li class="dr-header__item dr-header__list-item">
+      <a href="https://dropbox.tech/developers" class="dr-link dr-link--no-underline dr-nav__main-category">Developers</a>
+    </li>
+    <li class="dr-header__item dr-header__list-item">
+      <a class="dr-link dr-link--no-underline dr-header__link" href="http://dropbox.com/jobs" target="_blank">Jobs</a>
+    </li>
+<li class="dr-header__item dr-header__list-item">
+      <a class="dr-link dr-link--no-underline dr-header__link" href="https://dash.dropbox.com/?utm=blogs" target="_self">Dash</a>
+    </li>
+
+  </ul>
+</nav>
+
+    <button data-dark-mode-switcher class="dr-header__item dr-header__dark-mode-switcher dr-button dr-button--link dr-cursor-pointer" data-dr-tooltip="Dark Mode" data-dr-tooltip-theme="white" type="button">
+      <img alt="" height="30" src="/cms/etc.clientlibs/settings/wcm/designs/dropbox-tech-blog/clientlib-all/resources/button_dark-mode-new.svg" width="30" class="dr-header__mode-image"/>
+    </button>
+    <button class="dr-header__item dr-header__search-button dr-button dr-button--link dr-cursor-pointer" data-dr-tooltip="Search" data-dr-tooltip-theme="white" type="button">
+      <img alt="" height="20" src="/cms/etc.clientlibs/settings/wcm/designs/dropbox-tech-blog/clientlib-all/resources/button_search-new.svg" width="20"/>
+    </button>
+    <!--search-result-page-only-->
+    
+    <!--search-result-page-only-->
+    <div class="dr-header__search dr-display-none">
+      <button class="dr-header__search-close-button dr-header__item dr-button dr-button--link dr-cursor-pointer" type="button">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M19.2875 2.15983L17.6683 0.566406L9.82597 8.28403L2.33211 0.909344L0.71294 2.50277L8.2068 9.87746L0.666992 17.2974L2.28617 18.8908L9.82597 11.4709L17.7143 19.2337L19.3334 17.6403L11.4451 9.87746L19.2875 2.15983Z" fill="white"/>
+        </svg>
+      </button>
+      <div class="dr-header__search-form-container">
+        <form class="dr-header__search-form dr-container__content dr-width-100" method="get" action="https://dropbox.tech/search-results">
+            <div class="coveo-search-section dr-header__search-input dr-header-search-input-white dr-typography-t3" data-coveo-api-url="https://dropboxproductionpmlw0l3v.org.coveo.com/rest/search" data-coveo-org-id="dropboxproductionpmlw0l3v" data-coveo-api-key="xx54717485-2fdc-4d24-afa3-0d3c9f69e01b" data-searchPage="https://dropbox.tech/search-results.html">
+               <div class="CoveoSearchbox" data-enable-omnibox="true" data-enable-query-suggest-addon="true" data-placeholder="Search" data-number-of-suggestions="5"></div>
+                <div class="CoveoStyleReplacer"></div>
+            </div>
+            <p class="dr-header__search-hint dr-margin-top-30 dr-margin-bottom-0 dr-typography-t5 dr-display-none">
+                // Press enter to search
+            </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+</header>
+
+        
+
+        
+
+
+<!-- CMS-5220 : Fixing utag.js loading twice in our website
+<sly data-sly-include="/apps/dropbox-common/components/templates/base-page/partials/Analytics.html"/>
+-->
+        <div class="dr-article-hero">
+<div class="dr-article-hero__background-container dr-container--security">
+	<picture class="dr-article-hero__background dr-article-hero__background--regular">
+		<source media="( max-width: 375px )" srcset="/cms/content/dam/dropbox/tech-blog/en-us/security/Security-1-375x150px-light.png"/>
+		<source media="( min-width: 376px ) and ( max-width: 1199px )" srcset="/cms/content/dam/dropbox/tech-blog/en-us/security/Security-1-1024x250px-light.png"/>
+		<img class="dr-article-hero__background-image" src="/cms/content/dam/dropbox/tech-blog/en-us/security/Security-1-1440x305px-light.png" alt=""/>
+	</picture>
+
+	<picture class="dr-article-hero__background dr-article-hero__background--dark">
+		<source media="( max-width: 375px )" srcset="/cms/content/dam/dropbox/tech-blog/en-us/security/Security-1-375x150px-dark.png"/>
+		<source media="( min-width: 376px ) and ( max-width: 1199px )" srcset="/cms/content/dam/dropbox/tech-blog/en-us/security/Security-1-1024x250px-dark.png"/>
+		<img class="dr-article-hero__background-image" src="/cms/content/dam/dropbox/tech-blog/en-us/security/Security-1-1440x305px-dark.png" alt=""/>
+	</picture>
+</div>
+<section class="dr-container__content">
+	<span class="dr-article-hero__title-container dr-container--security">
+		<h1 class="dr-display-inline dr-typography-t15 dr-container--surface dr-article-hero__title">Protecting Security Researchers</h1>
+	</span>
+	<div class="dr-typography-no-space dr-margin-top-10 dr-margin-md-top-20">
+        <span class="dr-typography-t5">// By Chris Evans &bull; Mar 21, 2018</span>
+    </div>
+</section></div>
+<div class="dr-article-content">
+
+
+
+
+
+
+
+
+
+<div class="dr-article-content__scroll-tracker-container dr-container--security">
+    <div class="dr-article-content__scroll-tracker"></div>
+</div>
+<div class="dr-container__content">
+    <div class="dr-article-content__content-container dr-padding-md-left-80 dr-padding-md-right-80 dr-typography-t12">
+        <nav class="dr-article-content__side-nav dr-article-content__side-nav--initial dr-typography-t5">
+            
+        </nav>
+        <div class="dr-article-content__content">
+            
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="text parbase aem-GridColumn aem-GridColumn--default--12">
+<p>At Dropbox, we encourage, support, and celebrate independent open security research. </p>
+<p>One way we do this is via our <a href="https://hackerone.com/dropbox">bug bounty program</a>. We recently <a href="https://blogs.dropbox.com/tech/2017/09/updates-on-the-dropbox-bug-bounty-program/">tripled our rewards to industry leading values</a>. We also celebrated some of the amazing hacker community results with top-up bonuses, where we retroactively issued additional rewards for particularly unusual, clever, or high-impact findings. </p>
+<p>This post, however, is not about bug bounty programs. While a well-run bug bounty program is mandatory for maintaining top-tier security posture, this post is about the foundation on which bug bounty programs are built: the Vulnerability Disclosure Policy (VDP). It’s possible to have a great VDP without having a bug bounty program, and organizations should start their security journey there. </p>
+<p>Unfortunately, open security research, publication, and reporting has faced decades of abuse, threats, and bullying, such as:</p>
+<ol>
+<li>Legal threats, formal legal suits filed, and inappropriate referral to authorities.</li>
+<li>Public attacks on character or motivation.</li>
+<li>Laws that are vague or misguided, and may ban or criminalize good faith security research or publication.</li>
+<li>Pressuring, gagging, or firing researchers by abusing law or business relationships to the detriment of scientific publication.</li>
+</ol>
+<p>Anything that stifles open security research is problematic because many of the advances in security that we all enjoy come from the wonderful combined efforts of the security research community. <a href="http://www.zdnet.com/article/security-firm-keeper-sues-news-reporter-over-vulnerability-story/">Motivated by recent events</a> and discussions, we’ve realized that too few companies formally commit to avoiding many of the above behaviors. </p>
+<p>Looking at our own VDP, we realized we could do better, and immediately committed to updating our VDP to be best-of-breed. Our <a href="https://hackerone.com/dropbox">updated VDP</a> contains the following elements:</p>
+<ol>
+<li>A clear statement that external security research is welcomed.</li>
+<li>A pledge to not initiate legal action for security research conducted pursuant to the policy, <b>including good faith, accidental violations</b>.</li>
+<li>A clear statement that we consider actions consistent with the policy as constituting “authorized” conduct under the Computer Fraud and Abuse Act (CFAA).</li>
+<li>A pledge that we won’t bring a Digital Millennium Copyright Act (DMCA) action against a researcher for research consistent with the policy.</li>
+<li>A pledge that if a third party initiates legal action, Dropbox will make it clear when a researcher was acting in compliance with the policy (and therefore authorized by us).</li>
+<li>A specific note that we don’t negotiate bounties under duress. (If you find something, tell us immediately with no conditions attached.)</li>
+<li>Specific instructions on what a researcher should do if they inadvertently encounter data not belonging to themselves.</li>
+<li>A request to give us reasonable time to fix an issue before making it public. We do not, and should not, reserve the right to take forever to fix a security issue.</li>
+</ol>
+<p>And there’s one thing our VDP does not contain: we don’t gate researchers who wish to publish vulnerability details. Using policy or bug bounty payments to muzzle or curate scientific publication would be wrong. </p>
+<p>We’re also happy to announce that all of the text in our VDP is a <b>freely copyable</b> template. We’ve done this because we’d like to see others take a similar approach. We’ve put some effort in to this across our legal and security teams and if you like what you see, please use it. Similarly, if you have improvements to suggest, we’d <a href="https://hackerone.com/dropbox/reports/new">love to hear from</a> <a href="https://hackerone.com/dropbox/reports/new">you</a>. </p>
+<p>Of course, running a top-notch VDP isn’t just about the formal policy. It’s also about showing respect to researchers. We try and do this in various ways, including via prompt responses, fast payouts, transparency, and open conversations directly with our security engineers. For top bug bounty participants (for Dropbox or just generally), we invite them to visit our offices and give talks, and occasionally set up special internal contracts. </p>
+<p>We used some great references when refreshing our VDP and we’d like to give them a shout out here: <a href="https://www.hackerone.com/blog/Vulnerability-Disclosure-Policy-Basics-5-Critical-Components">HackerOne’s VDP guidelines</a> and the <a href="https://www.justice.gov/criminal-ccips/page/file/983996/download">US DoJ Cyber Security unit’s VDP framework</a>. We also took into consideration <a href="https://www.hackerone.com/blog/US-Senate-Hearing-Bug-Bounty-Lessons-Learned">recent Senate testimony</a> of experts in vulnerability disclosure in the role hackers can play in strengthening security. </p>
+<p>In order to do our part to expand protections for researchers more broadly, we’re going to take an unfavorable view of potential suppliers who do not have VDPs protective of researchers, or do not have VDPs at all. A missing or restrictive VDP is often a sign of poor security. Conversely, a VDP welcoming arbitrary research and offering researcher protections is usually a sign of a mature security posture. </p>
+<p>We value the open security research community and have taken steps to protect researchers. We expect any company which has security as a priority will do the same. We invite the broader industry to join us in these protections and expectations.</p>
+
+</div>
+
+    
+</div>
+
+        </div>
+        <hr class="dr-typography-t5 dr-margin-top-50 dr-article-content__divider"/>
+        <div class="dr-typography-t5">
+          
+        </div>
+        
+        <div class="dr-typography-t5 dr-margin-top-20">
+            // Tags <br/>
+            <ul class="dr-unstyled-list dr-margin-top-10 dr-typography-t4">
+                <li class="dr-container--security dr-display-inline-block dr-margin-right-10  dr-margin-bottom-10">
+                    <a class="dr-link dr-pill dr-pill--primary dr-link--no-underline" href="https://dropbox.tech/security">
+                        Security
+                    </a>
+                </li>
+                
+                    <li class="dr-display-inline-block dr-margin-right-10"><a class="dr-link dr-pill dr-link--no-underline" href="https://dropbox.tech/tag-results.vdp">Vdp</a></li>
+                
+                    <li class="dr-display-inline-block dr-margin-right-10"><a class="dr-link dr-pill dr-link--no-underline" href="https://dropbox.tech/tag-results.bug-bounty-program">Bug Bounty Program</a></li>
+                
+                    
+                
+            </ul>
+        </div>
+        
+        <div class="dr-article-content__knotch">
+            <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+                <div class="plain-html c17-plain-html aem-GridColumn aem-GridColumn--default--12">
+                  <div class="knotch_placeholder"></div>
+                </div>
+            </div>
+        </div>
+        <div class="dr-typography-t5 dr-margin-top-20 dr-hide-from-md">
+            // Copy link <br/>
+            <div class="dr-article-content__social-links-tooltip dr-display-none">Link copied</div>
+            <button class="dr-button dr-button--link dr-link dr-link--no-underline dr-article-content__copy-link" data-dr-tooltip="Copy link">
+                <img alt="Copy link" class="dr-display-block dr-invert-on-theme-dark" src="/cms/etc.clientlibs/settings/wcm/designs/dropbox-tech-blog/clientlib-article-content/resources/copy.svg"/>
+            </button>
+        </div>
+        <div class="dr-article-content__social-links">
+            <ul class="dr-article-content__social-links-list dr-unstyled-list">
+                <li class="dr-margin-bottom-20">
+                    <div class="dr-article-content__social-links-tooltip dr-typography-t5 dr-display-none">Link copied</div>
+                    <button class="dr-button dr-display-block dr-link dr-link--no-underline dr-article-content__copy-link dr-button--link" data-dr-tooltip="Copy link" data-dr-tooltip-position="cl" data-dr-tooltip-theme="bw">
+                        <img alt="Copy link" class="dr-display-block dr-invert-on-theme-dark" src="/cms/etc.clientlibs/settings/wcm/designs/dropbox-tech-blog/clientlib-article-content/resources/copy.svg"/>
+                    </button>
+                </li>
+                <li class="dr-margin-bottom-20">
+                    <a class="dr-link dr-display-block dr-link--no-underline dr-article-content__share-link dr-article-content__twitter-link" data-dr-tooltip="Share on Twitter" data-dr-tooltip-position="cl" data-dr-tooltip-theme="bw" href="https://twitter.com/intent/tweet/?text=Protecting%20Security%20Researchers&amp;url=https://dropbox.tech/security/protecting-security-researchers" target="_blank">
+                        <img alt="Share on Twitter" class="dr-display-block dr-invert-on-theme-dark" src="/cms/etc.clientlibs/settings/wcm/designs/dropbox-tech-blog/clientlib-article-content/resources/twitter.svg"/>
+                    </a>
+                </li>
+                <li class="dr-margin-bottom-20">
+                    <a class="dr-link dr-display-block dr-link--no-underline dr-article-content__share-link dr-article-content__facebook-link" data-dr-tooltip="Share on Facebook" data-dr-tooltip-position="cl" data-dr-tooltip-theme="bw" href="https://facebook.com/sharer/sharer.php?u=https://dropbox.tech/security/protecting-security-researchers" target="_blank">
+                        <img alt="Share on Facebook" class="dr-display-block dr-invert-on-theme-dark" src="/cms/etc.clientlibs/settings/wcm/designs/dropbox-tech-blog/clientlib-article-content/resources/facebook.svg"/>
+                    </a>
+                </li>
+                <li>
+                    <a class="dr-link dr-display-block dr-link--no-underline dr-article-content__share-link dr-article-content__linkedin-link" data-dr-tooltip="Share on Linkedin" data-dr-tooltip-position="cl" data-dr-tooltip-theme="bw" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://dropbox.tech/security/protecting-security-researchers&amp;title=Protecting%20Security%20Researchers&amp;source=https://dropbox.tech/security/protecting-security-researchers" target="_blank">
+                        <img alt="Share on Linkedin" class="dr-display-block dr-invert-on-theme-dark" src="/cms/etc.clientlibs/settings/wcm/designs/dropbox-tech-blog/clientlib-article-content/resources/linkedin.svg"/>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="related-articles aem-GridColumn aem-GridColumn--default--12">
+<div class="dr-container--security dr-container--primary-surface">
+    <div class="dr-container__content dr-padding-top-50 dr-padding-bottom-50 dr-padding-md-top-75 dr-padding-md-bottom-75">
+        <div class="dr-flex dr-flex-align-center">
+            <div class="dr-typography-t3 dr-flex-1">
+                Related posts
+            </div>
+            <a href="https://dropbox.tech/security" class="dr-link dr-typography-t4">
+                See more
+            </a>
+        </div>
+        <ul class="dr-unstyled-list dr-margin-top-30 dr-margin-md-top-50">
+            <li>
+                <a href="https://dropbox.tech/security/dropbox-mcp-dash-design-code-security" class="dr-related-articles__title dr-link dr-link--no-underline dr-typography-t6 dr-container--primary-on-primary-surface">
+                    How Dropbox uses MCP and Dash to close the design-to-code security gap
+                </a>
+                <div class="dr-margin-top-10 dr-typography-t5 dr-margin-lg-top-5">
+                    // Jun 12, 2026
+                </div>
+            </li>
+        
+            <li class="dr-margin-top-30 dr-margin-md-top-20">
+                <a href="https://dropbox.tech/security/file-encryption-teams-advanced-key-management" class="dr-related-articles__title dr-link dr-link--no-underline dr-typography-t6 dr-container--primary-on-primary-surface">
+                    Making file encryption fast and secure for teams with advanced key management
+                </a>
+                <div class="dr-margin-top-10 dr-typography-t5 dr-margin-lg-top-5">
+                    // Jul 10, 2025
+                </div>
+            </li>
+        
+            <li class="dr-margin-top-30 dr-margin-md-top-20">
+                <a href="https://dropbox.tech/security/how-we-use-lakera-guard-to-secure-our-llms" class="dr-related-articles__title dr-link dr-link--no-underline dr-typography-t6 dr-container--primary-on-primary-surface">
+                    How we use Lakera Guard to secure our LLMs
+                </a>
+                <div class="dr-margin-top-10 dr-typography-t5 dr-margin-lg-top-5">
+                    // Sep 18, 2024
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+
+    
+</div>
+
+
+        <footer class="dr-footer">
+<div class="dr-container--surface">
+  <section class="dr-container__content dr-footer__container">
+   <!--CMS-9789 Remove Mailchimp email signup from dropbox.tech (commenting out for now)
+     <sly data-sly-resource="newsletterSubscribe" /> 
+     -->
+    <div class="dr-grid dr-grid--md-2">
+      <div>
+        <a href="https://dropbox.com" target="_blank" class="dr-margin-bottom-20 dr-display-block">
+          <img alt="Dropbox" height="40" src="/cms/etc.clientlibs/settings/wcm/designs/dropbox-tech-blog/clientlib-all/resources/logo_dropbox.svg" width="164"/>
+        </a>
+      </div>
+      
+      <ul class="dr-footer-links dr-unstyled-list dr-typography-t10 dr-grid dr-grid--2 dr-grid--column-gap-15">
+        <li>
+          <a class="dr-link dr-link--no-underline " href="https://www.dropbox.com/about" target="_self">
+            About us
+          </a>
+        </li>
+      
+        <li>
+          <a class="dr-link dr-link--no-underline " href="https://twitter.com/Dropbox" target="_blank">
+            X
+          </a>
+        </li>
+      
+        <li>
+          <a class="dr-link dr-link--no-underline " href="https://dash.dropbox.com/" target="_self">
+            Dropbox Dash
+          </a>
+        </li>
+      
+        <li>
+          <a class="dr-link dr-link--no-underline " href="https://www.linkedin.com/company/dropbox" target="_blank">
+            LinkedIn
+          </a>
+        </li>
+      
+        <li>
+          <a class="dr-link dr-link--no-underline " href="https://www.dropbox.com/jobs" target="_blank">
+            Jobs
+          </a>
+        </li>
+      
+        <li>
+          <a class="dr-link dr-link--no-underline " href="https://www.instagram.com/dropbox" target="_blank">
+            Instagram
+          </a>
+        </li>
+      
+        <li>
+          <a class="dr-link dr-link--no-underline " href="https://www.dropbox.com/terms" target="_blank">
+            Privacy and terms
+          </a>
+        </li>
+      
+        <li>
+          <a class="dr-link dr-link--no-underline " href="https://dropbox.tech/feed" target="_blank">
+            RSS feed
+          </a>
+        </li>
+      
+        <li>
+          <a class="dr-link dr-link--no-underline " href="https://www.dropbox.com/ai-principles" target="_self">
+            AI principles
+          </a>
+        </li>
+      
+        <li>
+          <a class="dr-link dr-link--no-underline " href="https://dropbox.tech/culture/our-updated-engineering-career-framework" target="_blank">
+            Engineering Career Framework
+          </a>
+        </li>
+      
+        <li>
+          <a class="dr-link dr-link--no-underline evidon-notice-link" href="https://dropbox.tech/#manage-cookies" target="_self">
+            Cookies and CCPA preferences
+          </a>
+        </li>
+      
+        <li>
+          <a class="dr-link dr-link--no-underline " href="https://blog.dropbox.com/" target="_blank">
+            Blog
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+</footer>
+        
+
+        
+
+
+
+<!-- /*CMS-2358, include Coveo scripts*/ -->
+<script class="coveo-script" src="https://static.cloud.coveo.com/searchui/v2.10124/2/js/CoveoJsSearch.Lazy.min.js" integrity="sha512-TZ/h9PEDIZgO9TOpoJHlGGlz52ZqBl/B3wLmbpJ+q8Z6fIAUAkAOGPfx6Oy2camtVy6zLdVBA6H/2c8aUT40Qg==" crossorigin="anonymous"></script>
+<script src="https://static.cloud.coveo.com/searchui/v2.10124/2/js/templates/templates.js" integrity="sha512-CR0Yk/LIwgh1MsKqjecDp/r6F9ipKc6gA+4+E1pplT3N3r1pk+la/HaqyDiKtjOFwrwIIbIYBFrUJgPql93QHw==" crossorigin="anonymous"></script>
+
+    <script src="https://static.cloud.coveo.com/searchui/v2.10124/2/js/cultures/en.js" integrity="sha512-WwPseicWtWAxrdno8NVAcKvVezXUCAxIklKyGEptRepHDvt+hZ3UzJeUiUN0C1hc49SiHFoGj18pdyy4pR9NNA==" crossorigin="anonymous"></script>
+
+
+
+    
+<script src="/cms/etc.clientlibs/settings/wcm/designs/dropbox-common/clientlib-jquery.618538b4ab9639d444e962729a927f15.js"></script>
+<script src="/cms/etc.clientlibs/settings/wcm/designs/dropbox-common/clientlib-cms-common.68a837164e0eb431209ced45efb1615e.js"></script>
+<script src="/cms/etc.clientlibs/settings/wcm/designs/dropbox-tech-blog/clientlib-all.8227f364d7c883652f21f593dbc437a3.js"></script>
+
+
+
+
+
+    
+<script src="/cms/etc.clientlibs/settings/wcm/designs/dropbox-tech-blog/clientlib-article-content.698e752d4084220b3a6facc1645490f8.js"></script>
+
+
+
+
+
+ 
+<script>
+    window.utag_cfg_ovrd = window.utag_cfg_ovrd || {};
+    window.utag_cfg_ovrd.noview = true;
+    window.utag_data = window.utag_data || {};
+    window.utag_data.evidon_enabled = true;
+    if(window.utag_data.consent_categories == undefined){
+        window.utag_data.consent_categories = "";
+    }
+</script>
+<script src="https://www.dropbox.com/pithos/privacy_consent,top_frame_marketing_tracker,ux_analytics" async="true"></script>
+<script src="https://www.dropbox.com/pithos/zoom_chat_client" async=""></script>
+
+
+
+        
+        <script type="application/javascript">document.body.classList.remove('stormcrow-animate');</script>
+        <noscript><style>body.stormcrow-animate{opacity:1;}</style></noscript>
+
+          <!--/* CMS-3302 Automated Schema Markup for Components, Structure data changes-->
+       
+
+                 
+       
+    </body>
+    </html>
