@@ -7,9 +7,10 @@
 ## Coverage
 
 - **48** external sources
-- **45** captured as local bytes in [`captures/`](captures/) (survive every clone), each SHA-256'd in [`SHA256SUMS`](SHA256SUMS)
+- **45** captured as local bytes in [`captures/`](captures/), each SHA-256'd in [`SHA256SUMS`](SHA256SUMS)
 - **48** have an immutable Wayback Machine snapshot (redundant, independently hosted)
-- **3** block automated fetch (SSRN, iso.org, X) — no local HTML; covered by Wayback + a rendered-in-browser check, disclosed per-row
+- **3** block automated fetch (SSRN, iso.org, X) — no local HTML; covered by Wayback + a rendered-in-browser check
+- **2** live URLs returned a redirect/JS-shell to automation (justice.gov, hackerone.com) — flagged `⚠ stub → Wayback`; the Wayback snapshot holds the real content
 
 ## Verify integrity
 
@@ -51,7 +52,7 @@ cd evidence && sha256sum -c SHA256SUMS      # or: shasum -a 256 -c SHA256SUMS
 | 28 | pdf | `www_justice_gov_criminal_ccips_page_file_983996_download.pdf` | `d0cfa766a293…` | [snapshot](https://web.archive.org/web/20260515152506/https://www.justice.gov/criminal-ccips/page/file/983996/download) | [source](https://www.justice.gov/criminal-ccips/page/file/983996/download) |
 | 29 | live-html | `www_sei_cmu_edu_library_the_cert_guide_to_coordinated_vulnerability_disclosure_2.html` | `907bfac79fac…` | [snapshot](https://web.archive.org/web/20260307000015/https://www.sei.cmu.edu/library/the-cert-guide-to-coordinated-vulnerability-disclosure-2/) | [source](https://www.sei.cmu.edu/library/the-cert-guide-to-coordinated-vulnerability-disclosure-2/) |
 | 30 | pdf | `www_supremecourt_gov_opinions_20pdf_19_783_k53l_pdf.pdf` | `6bce74855e17…` | [snapshot](https://web.archive.org/web/20260617182822/https://www.supremecourt.gov/opinions/20pdf/19-783_k53l.pdf) | [source](https://www.supremecourt.gov/opinions/20pdf/19-783_k53l.pdf) |
-| 31 | live-html | `www_justice_gov_archives_opa_pr_department_justice_announces_new_policy_charging_cases_und.html` | `7ed57d170137…` | [snapshot](https://web.archive.org/web/20260705232352/https://www.justice.gov/archives/opa/pr/department-justice-announces-new-policy-charging-cases-under-computer-fraud-and-abuse-act) | [source](https://www.justice.gov/archives/opa/pr/department-justice-announces-new-policy-charging-cases-under-computer-fraud-and-abuse-act) |
+| 31 | live-html | ⚠ stub → Wayback | `7ed57d170137…` | [snapshot](https://web.archive.org/web/20260705232352/https://www.justice.gov/archives/opa/pr/department-justice-announces-new-policy-charging-cases-under-computer-fraud-and-abuse-act) | [source](https://www.justice.gov/archives/opa/pr/department-justice-announces-new-policy-charging-cases-under-computer-fraud-and-abuse-act) |
 | 32 | live-html | `eur_lex_europa_eu_eli_dir_2022_2555_oj.html` | `8ac630f8c088…` | [snapshot](https://web.archive.org/web/20260705232452/https://eur-lex.europa.eu/eli/dir/2022/2555/oj) | [source](https://eur-lex.europa.eu/eli/dir/2022/2555/oj) |
 | 33 | live-html | `eur_lex_europa_eu_eli_reg_2024_2847_oj.html` | `b55646a1f271…` | [snapshot](https://web.archive.org/web/20260705232527/https://eur-lex.europa.eu/eli/reg/2024/2847/oj) | [source](https://eur-lex.europa.eu/eli/reg/2024/2847/oj) |
 | 34 | live-html | `dl_packetstormsecurity_net_papers_general_rfpolicy_2_0_txt.html` | `292c943bdd96…` | [snapshot](https://web.archive.org/web/20260705232556/https://dl.packetstormsecurity.net/papers/general/rfpolicy-2.0.txt) | [source](https://dl.packetstormsecurity.net/papers/general/rfpolicy-2.0.txt) |
@@ -68,6 +69,6 @@ cd evidence && sha256sum -c SHA256SUMS      # or: shasum -a 256 -c SHA256SUMS
 | 45 | live-html | `projectzero_google_2014_07_announcing_project_zero_html.html` | `48d2c392b532…` | [snapshot](https://web.archive.org/web/20260705232929/https://projectzero.google/2014/07/announcing-project-zero.html) | [source](https://projectzero.google/2014/07/announcing-project-zero.html) |
 | 46 | live-html | `projectzero_google_2015_02_feedback_and_data_driven_updates_to_html.html` | `45442f81cf65…` | [snapshot](https://web.archive.org/web/20260705232952/https://projectzero.google/2015/02/feedback-and-data-driven-updates-to.html) | [source](https://projectzero.google/2015/02/feedback-and-data-driven-updates-to.html) |
 | 47 | live-html | `www_hackerone_com_press_release_hackerone_announces_gold_standard_safe_harbor_improve_prot.html` | `bc2deed43c7d…` | [snapshot](https://web.archive.org/web/20260705233020/https://www.hackerone.com/press-release/hackerone-announces-gold-standard-safe-harbor-improve-protections-good-faith-security) | [source](https://www.hackerone.com/press-release/hackerone-announces-gold-standard-safe-harbor-improve-protections-good-faith-security) |
-| 48 | live-html | `hackerone_com_deptofdefense.html` | `28a85266cb81…` | [snapshot](https://web.archive.org/web/20260616181525/https://hackerone.com/deptofdefense) | [source](https://hackerone.com/deptofdefense) |
+| 48 | live-html | ⚠ stub → Wayback | `28a85266cb81…` | [snapshot](https://web.archive.org/web/20260616181525/https://hackerone.com/deptofdefense) | [source](https://hackerone.com/deptofdefense) |
 
-*Type key: `git-commit`/`git-repo` = content-addressed GitHub object (the hash is the proof) · `wayback` = already an immutable snapshot · `live-html`/`pdf` = captured + re-submitted to Wayback · `bot-blocked` = 403 to automation, covered by Wayback.*
+*Type key: `git-commit`/`git-repo` = content-addressed GitHub object (the hash is the proof) · `wayback` = already an immutable snapshot · `live-html`/`pdf` = captured + re-submitted to Wayback · `bot-blocked` = 403 to automation, covered by Wayback. `⚠ stub → Wayback` = the live URL served a redirect/JS shell to automation; rely on the Wayback snapshot.*
