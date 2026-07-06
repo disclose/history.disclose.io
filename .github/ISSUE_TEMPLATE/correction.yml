@@ -1,0 +1,53 @@
+name: Correction or addition
+description: Fix a date, correct an attribution, add a source, or push the lineage earlier — every dated claim needs a verifiable source.
+title: "[correction] "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping keep this history accurate. The one rule: **every dated claim must be anchored to a verifiable source** (a git author-date, a Wayback snapshot, a published standard, or a court/legislative record), and that source outranks any publish date or recollection. See [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of change is this?
+      options:
+        - Correct a date
+        - Correct an attribution or fact
+        - Add a new source / claim
+        - Push the earliest root earlier
+        - Broken or hijacked source link
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: The claim (as it is now, and as it should be)
+      description: Quote the current line from TIMELINE.md / LEDGER.md / the report if you're correcting one, and state what it should say.
+    validations:
+      required: true
+  - type: input
+    id: source_url
+    attributes:
+      label: Source URL
+      description: A link a stranger can open and check — a git commit, a Wayback snapshot, a standard, or a court/legislative record.
+      placeholder: https://web.archive.org/web/… or https://github.com/…/commit/…
+    validations:
+      required: true
+  - type: textarea
+    id: date_basis
+    attributes:
+      label: How was the date established?
+      description: e.g. "git commit author-date", "Wayback snapshot timestamp 2015-03-11", "RFC publication date", "filing date on the docket".
+    validations:
+      required: true
+  - type: checkboxes
+    id: acknowledgements
+    attributes:
+      label: Before you submit
+      options:
+        - label: The source URL resolves right now, and I've confirmed it actually supports the claim.
+          required: true
+        - label: I understand this is a falsifiable history dedicated to the public domain (CC0 1.0).
+          required: true
