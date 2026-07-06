@@ -1,8 +1,10 @@
 <div align="center">
 
-# The Archaeology of dioterms
+**disclose.io · a sourced history of the terms**
 
-### A sourced history of the **disclose.io safe-harbor terms** — traced to their earliest internet-verifiable ancestor, with every claim anchored to a live artifact. Read it at **[history.disclose.io](https://history.disclose.io)**.
+# The Archeology of Safe Harbor
+
+### Tracing the **disclose.io safe-harbor terms** to their earliest internet-verifiable ancestor, with every claim anchored to a live artifact. Read it at **[history.disclose.io](https://history.disclose.io)**.
 
 <p>
 <a href="LICENSE"><img src="https://img.shields.io/github/license/disclose/history.disclose.io?color=5B3AB6&label=license" alt="license"></a>
@@ -11,7 +13,7 @@
 <img src="https://img.shields.io/badge/evidence-SHA--256%20%2B%20Wayback-5B3AB6" alt="evidence · SHA-256 + Wayback">
 </p>
 
-*Part of **[the disclose.io Project](https://disclose.io)** — the infrastructure that powers vulnerability disclosure and security reporting, Internet-wide. [Browse the ecosystem →](https://github.com/disclose)*
+Part of **[the disclose.io Project](https://disclose.io)** — the infrastructure that powers vulnerability disclosure and security reporting, Internet-wide. [Browse the ecosystem →](https://github.com/disclose)
 
 </div>
 
