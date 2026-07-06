@@ -8,7 +8,7 @@
 <a href="LICENSE"><img src="https://img.shields.io/github/license/disclose/history.disclose.io?color=5B3AB6&label=license" alt="license"></a>
 <a href="https://history.disclose.io"><img src="https://img.shields.io/badge/live-history.disclose.io-5B3AB6" alt="live · history.disclose.io"></a>
 <a href=".github/workflows/link-check.yml"><img src="https://github.com/disclose/history.disclose.io/actions/workflows/link-check.yml/badge.svg" alt="link check"></a>
-<img src="https://img.shields.io/badge/sources-verified%20live-5B3AB6" alt="sources · verified live">
+<img src="https://img.shields.io/badge/evidence-SHA--256%20%2B%20Wayback-5B3AB6" alt="evidence · SHA-256 + Wayback">
 </p>
 
 *Part of **[the disclose.io Project](https://disclose.io)** — the infrastructure that powers vulnerability disclosure and security reporting, Internet-wide. [Browse the ecosystem →](https://github.com/disclose)*
@@ -64,4 +64,4 @@ This repository documents responsible disclosure — and practices it. See [SECU
 
 <a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/"><img alt="CC0 1.0" style="border-width:0" src="https://licensebuttons.net/p/zero/1.0/88x31.png"></a>
 
-Dedicated to the public domain under [**CC0 1.0 Universal**](LICENSE) — the same dedication as the [dioterms](https://github.com/disclose/dioterms) this history traces. To the extent possible under law, the disclose.io Project has waived all copyright and related rights to this work.
+Dedicated to the public domain under [**CC0 1.0 Universal**](LICENSE) — the same dedication as the [dioterms](https://github.com/disclose/dioterms) this history traces. To the extent possible under law, the disclose.io Project has waived all copyright and related rights to this work. Cited third-party material — quotations, snapshots, and referenced documents — remains under its own rights and is used here for reference and commentary.
