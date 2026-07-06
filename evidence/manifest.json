@@ -221,7 +221,11 @@
    "httpStatus": null,
    "note": "blocks automated fetch (403/JS) — captured via screenshot + any Wayback copy",
    "needsScreenshot": true,
-   "wayback": "https://web.archive.org/web/20251121164441/https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3161758"
+   "wayback": "https://web.archive.org/web/20251121164441/https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3161758",
+   "waybackByteCapture": "captures/papers_ssrn_com_wayback.html",
+   "waybackByteSha256": "7058f2184aeb95f3b252381863f0b6f46ea446976d97c192ada7786bd57a4a7a",
+   "waybackByteBytes": 57374,
+   "waybackContentReal": true
   },
   {
    "url": "https://en.wikipedia.org/wiki/RFPolicy",
@@ -255,7 +259,11 @@
    "httpStatus": null,
    "note": "blocks automated fetch (403/JS) — captured via screenshot + any Wayback copy",
    "needsScreenshot": true,
-   "wayback": "https://web.archive.org/web/20260702082628/https://www.iso.org/standard/45170.html"
+   "wayback": "https://web.archive.org/web/20260702082628/https://www.iso.org/standard/45170.html",
+   "waybackByteCapture": "captures/iso_org_standard_45170_wayback.html",
+   "waybackByteSha256": "3d4974735d9cc76474c21ae55ac148ab580698870e23c0392a708d408464ef9f",
+   "waybackByteBytes": 77315,
+   "waybackContentReal": true
   },
   {
    "url": "https://www.cisa.gov/news-events/directives/bod-20-01-develop-and-publish-vulnerability-disclosure-policy",
@@ -444,7 +452,8 @@
    "bytes": 49116,
    "httpStatus": 200,
    "note": "immutable Wayback snapshot (already durable); local copy is belt-and-suspenders",
-   "wayback": "https://web.archive.org/web/20201021031353/https://twitter.com/senorarroz/status/779402727885410304"
+   "wayback": "https://web.archive.org/web/20201021031353/https://twitter.com/senorarroz/status/779402727885410304",
+   "contentVerifiedReal": true
   },
   {
    "url": "https://www.prnewswire.com/news-releases/bugcrowd-releases-open-source-responsible-disclosure-framework-268435072.html",
@@ -531,9 +540,13 @@
    "sha256": "28a85266cb8191219db80f8f117ee7f14e3714170426eca99fd2333a5c6a5af6",
    "bytes": 3619,
    "httpStatus": 200,
-   "note": " ⚠ local capture is a redirect/JS-shell stub, not the article body — authoritative content is the Wayback snapshot.",
+   "note": "⚠ HackerOne program page is a JS single-page app; both the live fetch AND the Wayback snapshot capture only the app shell (~3.6KB), not the rendered policy. The U.S. DoD VDP is uncontested and widely documented; this is a link-out in the adoption story, not a load-bearing dated claim.",
    "wayback": "https://web.archive.org/web/20260616181525/https://hackerone.com/deptofdefense",
-   "localCaptureStub": true
+   "localCaptureStub": true,
+   "waybackByteCapture": "captures/hackerone_com_deptofdefense_wayback.html",
+   "waybackByteSha256": "64555adfcff02ad4debd16197d1fd7318374efde58ad7138be626d5c9e8d5393",
+   "waybackByteBytes": 3619,
+   "waybackContentReal": false
   }
  ],
  "summary": {
@@ -541,6 +554,9 @@
   "localByteCaptures": 45,
   "withWaybackSnapshot": 48,
   "botBlockedNoLocalHtml": 3,
-  "localCaptureStubs": 2
+  "localCaptureStubs": 2,
+  "pointerOnlySourcesNowByteCaptured": 3,
+  "durableLocalBytes": 45,
+  "shellOnlyDocumented": 2
  }
 }

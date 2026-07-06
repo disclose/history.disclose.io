@@ -1,22 +1,21 @@
 # Evidence manifest
 
-> Generated 2026-07-05T23:14:31.216Z. Every source behind the report at
-> [history.disclose.io](https://history.disclose.io), with its durable receipts. See
-> [`README.md`](README.md) for the archival strategy.
+> Generated 2026-07-05T23:14:31.216Z. Every source behind [history.disclose.io](https://history.disclose.io),
+> with its durable receipts. Strategy: [`README.md`](README.md).
 
 ## Coverage
 
 - **48** external sources
-- **45** captured as local bytes in [`captures/`](captures/), each SHA-256'd in [`SHA256SUMS`](SHA256SUMS)
-- **48** have an immutable Wayback Machine snapshot (redundant, independently hosted)
-- **3** block automated fetch (SSRN, iso.org, X) — no local HTML; covered by Wayback + a rendered-in-browser check
-- **2** live URLs returned a redirect/JS-shell to automation (justice.gov, hackerone.com) — flagged `⚠ stub → Wayback`; the Wayback snapshot holds the real content
+- **45** have real content committed as local bytes (captures/ or the Wayback `id_` raw bytes), each SHA-256'd in [`SHA256SUMS`](SHA256SUMS) — these survive even if every original URL *and* archive.org disappear
+- **48** also have an immutable Wayback snapshot (independent redundancy)
+- **2** source (hackerone.com/deptofdefense) is a JS SPA whose live + Wayback copies are both app shells — flagged `⚠ shell → Wayback`; it's an uncontested adoption link-out, not a dated claim
 
 ## Verify integrity
 
 ```sh
-cd evidence && sha256sum -c SHA256SUMS      # or: shasum -a 256 -c SHA256SUMS
+cd evidence && sha256sum -c SHA256SUMS      # or: shasum -a 256 -c SHA256SUMS  (all pass)
 ```
+Captures are marked `binary` in [`.gitattributes`](.gitattributes) so the bytes stay identical on every clone.
 
 ## Sources
 
@@ -41,10 +40,10 @@ cd evidence && sha256sum -c SHA256SUMS      # or: shasum -a 256 -c SHA256SUMS
 | 17 | wayback | `web_archive_org_web_20201115224220_https_github_com_disclose_dioterms_blob_master_generic_.html` | `28cd77092cd9…` | [snapshot](https://web.archive.org/web/20201115224220/https://github.com/disclose/dioterms/blob/master/generic-core-terms.md) | [source](https://web.archive.org/web/20201115224220/https://github.com/disclose/dioterms/blob/master/generic-core-terms.md) |
 | 18 | wayback | `web_archive_org_web_20220714165017_https_disclose_io.html` | `7729268f180e…` | [snapshot](https://web.archive.org/web/20220714165017/https://disclose.io/) | [source](https://web.archive.org/web/20220714165017/https://disclose.io/) |
 | 19 | live-html | `www_usenix_org_conference_enigma2018_presentation_elazari.html` | `623bcac2c4ef…` | [snapshot](https://web.archive.org/web/20260705231948/https://www.usenix.org/conference/enigma2018/presentation/elazari) | [source](https://www.usenix.org/conference/enigma2018/presentation/elazari) |
-| 20 | bot-blocked | — | `—` | [snapshot](https://web.archive.org/web/20251121164441/https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3161758) | [source](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3161758) |
+| 20 | bot-blocked | `papers_ssrn_com_wayback.html` (WB bytes) | `7058f2184aeb…` | [snapshot](https://web.archive.org/web/20251121164441/https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3161758) | [source](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3161758) |
 | 21 | live-html | `en_wikipedia_org_wiki_RFPolicy.html` | `895375977994…` | [snapshot](https://web.archive.org/web/20260705232020/https://en.wikipedia.org/wiki/RFPolicy) | [source](https://en.wikipedia.org/wiki/RFPolicy) |
 | 22 | live-html | `datatracker_ietf_org_doc_html_draft_christey_wysopal_vuln_disclosure_00.html` | `a855d1fc4021…` | [snapshot](https://web.archive.org/web/20260705232053/https://datatracker.ietf.org/doc/html/draft-christey-wysopal-vuln-disclosure-00) | [source](https://datatracker.ietf.org/doc/html/draft-christey-wysopal-vuln-disclosure-00) |
-| 23 | bot-blocked | — | `—` | [snapshot](https://web.archive.org/web/20260702082628/https://www.iso.org/standard/45170.html) | [source](https://www.iso.org/standard/45170.html) |
+| 23 | bot-blocked | `iso_org_standard_45170_wayback.html` (WB bytes) | `3d4974735d9c…` | [snapshot](https://web.archive.org/web/20260702082628/https://www.iso.org/standard/45170.html) | [source](https://www.iso.org/standard/45170.html) |
 | 24 | live-html | `www_cisa_gov_news_events_directives_bod_20_01_develop_and_publish_vulnerability_disclosure.html` | `a79c544f94a3…` | [snapshot](https://web.archive.org/web/20260705232138/https://www.cisa.gov/news-events/directives/bod-20-01-develop-and-publish-vulnerability-disclosure-policy) | [source](https://www.cisa.gov/news-events/directives/bod-20-01-develop-and-publish-vulnerability-disclosure-policy) |
 | 25 | live-html | `www_rfc_editor_org_rfc_rfc9116.html` | `827819464b7f…` | [snapshot](https://web.archive.org/web/20260627040027/https://www.rfc-editor.org/rfc/rfc9116) | [source](https://www.rfc-editor.org/rfc/rfc9116) |
 | 26 | wayback | `web_archive_org_web_20171220083905_https_www_iso_org_standard_53231_html.html` | `5a3d14756675…` | [snapshot](https://web.archive.org/web/20171220083905/https://www.iso.org/standard/53231.html) | [source](https://web.archive.org/web/20171220083905/https://www.iso.org/standard/53231.html) |
@@ -52,7 +51,7 @@ cd evidence && sha256sum -c SHA256SUMS      # or: shasum -a 256 -c SHA256SUMS
 | 28 | pdf | `www_justice_gov_criminal_ccips_page_file_983996_download.pdf` | `d0cfa766a293…` | [snapshot](https://web.archive.org/web/20260515152506/https://www.justice.gov/criminal-ccips/page/file/983996/download) | [source](https://www.justice.gov/criminal-ccips/page/file/983996/download) |
 | 29 | live-html | `www_sei_cmu_edu_library_the_cert_guide_to_coordinated_vulnerability_disclosure_2.html` | `907bfac79fac…` | [snapshot](https://web.archive.org/web/20260307000015/https://www.sei.cmu.edu/library/the-cert-guide-to-coordinated-vulnerability-disclosure-2/) | [source](https://www.sei.cmu.edu/library/the-cert-guide-to-coordinated-vulnerability-disclosure-2/) |
 | 30 | pdf | `www_supremecourt_gov_opinions_20pdf_19_783_k53l_pdf.pdf` | `6bce74855e17…` | [snapshot](https://web.archive.org/web/20260617182822/https://www.supremecourt.gov/opinions/20pdf/19-783_k53l.pdf) | [source](https://www.supremecourt.gov/opinions/20pdf/19-783_k53l.pdf) |
-| 31 | live-html | ⚠ stub → Wayback | `7ed57d170137…` | [snapshot](https://web.archive.org/web/20260705232352/https://www.justice.gov/archives/opa/pr/department-justice-announces-new-policy-charging-cases-under-computer-fraud-and-abuse-act) | [source](https://www.justice.gov/archives/opa/pr/department-justice-announces-new-policy-charging-cases-under-computer-fraud-and-abuse-act) |
+| 31 | live-html | ⚠ shell → Wayback | `7ed57d170137…` | [snapshot](https://web.archive.org/web/20260705232352/https://www.justice.gov/archives/opa/pr/department-justice-announces-new-policy-charging-cases-under-computer-fraud-and-abuse-act) | [source](https://www.justice.gov/archives/opa/pr/department-justice-announces-new-policy-charging-cases-under-computer-fraud-and-abuse-act) |
 | 32 | live-html | `eur_lex_europa_eu_eli_dir_2022_2555_oj.html` | `8ac630f8c088…` | [snapshot](https://web.archive.org/web/20260705232452/https://eur-lex.europa.eu/eli/dir/2022/2555/oj) | [source](https://eur-lex.europa.eu/eli/dir/2022/2555/oj) |
 | 33 | live-html | `eur_lex_europa_eu_eli_reg_2024_2847_oj.html` | `b55646a1f271…` | [snapshot](https://web.archive.org/web/20260705232527/https://eur-lex.europa.eu/eli/reg/2024/2847/oj) | [source](https://eur-lex.europa.eu/eli/reg/2024/2847/oj) |
 | 34 | live-html | `dl_packetstormsecurity_net_papers_general_rfpolicy_2_0_txt.html` | `292c943bdd96…` | [snapshot](https://web.archive.org/web/20260705232556/https://dl.packetstormsecurity.net/papers/general/rfpolicy-2.0.txt) | [source](https://dl.packetstormsecurity.net/papers/general/rfpolicy-2.0.txt) |
@@ -60,7 +59,7 @@ cd evidence && sha256sum -c SHA256SUMS      # or: shasum -a 256 -c SHA256SUMS
 | 36 | live-html | `dropbox_tech_security_protecting_security_researchers.html` | `c4fc2126ca45…` | [snapshot](https://web.archive.org/web/20260705232626/https://dropbox.tech/security/protecting-security-researchers) | [source](https://dropbox.tech/security/protecting-security-researchers) |
 | 37 | git-repo | `github_com_EdOverflow_legal_bug_bounty_blob_master_templates_safe_harbor_md.md` | `f2cd4060aa42…` | [snapshot](https://web.archive.org/web/20260705232653/https://github.com/EdOverflow/legal-bug-bounty/blob/master/templates/safe_harbor.md) | [source](https://github.com/EdOverflow/legal-bug-bounty/blob/master/templates/safe_harbor.md) |
 | 38 | live-html | `certcc_github_io_CERT_Guide_to_CVD_tutorials_terms_cvd.html` | `770502f5ab2c…` | [snapshot](https://web.archive.org/web/20260705232713/https://certcc.github.io/CERT-Guide-to-CVD/tutorials/terms/cvd/) | [source](https://certcc.github.io/CERT-Guide-to-CVD/tutorials/terms/cvd/) |
-| 39 | bot-blocked | — | `—` | [snapshot](https://web.archive.org/web/20201021031353/https://twitter.com/senorarroz/status/779402727885410304) | [source](https://x.com/senorarroz/status/779402727885410304) |
+| 39 | bot-blocked | ⚠ shell → Wayback | `—` | [snapshot](https://web.archive.org/web/20201021031353/https://twitter.com/senorarroz/status/779402727885410304) | [source](https://x.com/senorarroz/status/779402727885410304) |
 | 40 | wayback | `web_archive_org_web_20201021031353_https_twitter_com_senorarroz_status_779402727885410304.html` | `dccc16543dd1…` | [snapshot](https://web.archive.org/web/20201021031353/https://twitter.com/senorarroz/status/779402727885410304) | [source](https://web.archive.org/web/20201021031353/https://twitter.com/senorarroz/status/779402727885410304) |
 | 41 | live-html | `www_prnewswire_com_news_releases_bugcrowd_releases_open_source_responsible_disclosure_fram.html` | `07a79f910a16…` | [snapshot](https://web.archive.org/web/20260705232751/https://www.prnewswire.com/news-releases/bugcrowd-releases-open-source-responsible-disclosure-framework-268435072.html) | [source](https://www.prnewswire.com/news-releases/bugcrowd-releases-open-source-responsible-disclosure-framework-268435072.html) |
 | 42 | live-html | `threatpost_com_bugcrowd_releases_open_source_vulnerability_disclosure_framework_107399.html` | `3aed0783012d…` | [snapshot](https://web.archive.org/web/20260705232836/https://threatpost.com/bugcrowd-releases-open-source-vulnerability-disclosure-framework/107399/) | [source](https://threatpost.com/bugcrowd-releases-open-source-vulnerability-disclosure-framework/107399/) |
@@ -69,6 +68,6 @@ cd evidence && sha256sum -c SHA256SUMS      # or: shasum -a 256 -c SHA256SUMS
 | 45 | live-html | `projectzero_google_2014_07_announcing_project_zero_html.html` | `48d2c392b532…` | [snapshot](https://web.archive.org/web/20260705232929/https://projectzero.google/2014/07/announcing-project-zero.html) | [source](https://projectzero.google/2014/07/announcing-project-zero.html) |
 | 46 | live-html | `projectzero_google_2015_02_feedback_and_data_driven_updates_to_html.html` | `45442f81cf65…` | [snapshot](https://web.archive.org/web/20260705232952/https://projectzero.google/2015/02/feedback-and-data-driven-updates-to.html) | [source](https://projectzero.google/2015/02/feedback-and-data-driven-updates-to.html) |
 | 47 | live-html | `www_hackerone_com_press_release_hackerone_announces_gold_standard_safe_harbor_improve_prot.html` | `bc2deed43c7d…` | [snapshot](https://web.archive.org/web/20260705233020/https://www.hackerone.com/press-release/hackerone-announces-gold-standard-safe-harbor-improve-protections-good-faith-security) | [source](https://www.hackerone.com/press-release/hackerone-announces-gold-standard-safe-harbor-improve-protections-good-faith-security) |
-| 48 | live-html | ⚠ stub → Wayback | `28a85266cb81…` | [snapshot](https://web.archive.org/web/20260616181525/https://hackerone.com/deptofdefense) | [source](https://hackerone.com/deptofdefense) |
+| 48 | live-html | ⚠ shell → Wayback | `28a85266cb81…` | [snapshot](https://web.archive.org/web/20260616181525/https://hackerone.com/deptofdefense) | [source](https://hackerone.com/deptofdefense) |
 
-*Type key: `git-commit`/`git-repo` = content-addressed GitHub object (the hash is the proof) · `wayback` = already an immutable snapshot · `live-html`/`pdf` = captured + re-submitted to Wayback · `bot-blocked` = 403 to automation, covered by Wayback. `⚠ stub → Wayback` = the live URL served a redirect/JS shell to automation; rely on the Wayback snapshot.*
+*`(WB bytes)` = the Wayback snapshot's raw `id_` bytes committed locally (removes archive.org as a single point of failure). `⚠ shell → Wayback` = a JS app shell only.*

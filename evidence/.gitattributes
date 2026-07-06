@@ -1,0 +1,3 @@
+captures/** -text -diff
+screenshots/** -text -diff
+*.pdf -text -diff
