@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Read the live history
+    url: https://history.disclose.io
+    about: The rendered report — timeline, genealogy, and sources.
+  - name: disclose.io Community Forum
+    url: https://community.disclose.io
+    about: Discuss disclosure practice, safe harbor, and the terms with the community.
+  - name: The dioterms themselves
+    url: https://github.com/disclose/dioterms
+    about: The canonical CC0 safe-harbor language whose history this repo traces.

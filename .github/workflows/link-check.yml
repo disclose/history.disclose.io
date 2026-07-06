@@ -1,0 +1,49 @@
+name: link-check
+
+# The whole premise of this repository is that its links resolve. This runs a
+# link-checker over the project's own docs — their internal cross-references and
+# live ecosystem links. It deliberately does NOT crawl the historical source
+# corpus in TIMELINE.md / sources/, whose citations are expected to rot over time
+# and are preserved separately in evidence/ (byte capture + SHA-256 + Wayback).
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - CONTRIBUTING.md
+      - SECURITY.md
+      - CODE_OF_CONDUCT.md
+      - .github/workflows/link-check.yml
+  pull_request:
+    paths:
+      - README.md
+      - CONTRIBUTING.md
+      - SECURITY.md
+      - CODE_OF_CONDUCT.md
+      - .github/workflows/link-check.yml
+  schedule:
+    - cron: "0 9 * * 1" # weekly (Mon 09:00 UTC) — catch ecosystem-link rot
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check links in project docs
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-retries 2
+            --accept 200,204,206,301,302,307,308,403,429
+            --exclude-mail
+            README.md CONTRIBUTING.md SECURITY.md CODE_OF_CONDUCT.md
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
